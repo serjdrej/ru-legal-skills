@@ -34,11 +34,15 @@ each one.
       into ГОСТ Р 2.610-2019 with no framing at all.)*
 - [ ] An explicit "what it does NOT do" section, not just "what it does."
 - [ ] Installation instructions, both paths: standalone
-      (`git clone ... ~/.claude/skills/<name>`) and via this marketplace
-      (`/plugin marketplace add serjdrej/ru-legal-skills` +
-      `/plugin install <name>@ru-legal-skills`). *(Missing from all three
-      plugins as of 2026-09-11 — fixed for gost-ed-mashiny, still open for
-      legal-ru and patent-ru.)*
+      (`git clone ... ~/.claude/skills/<name>`) and via this marketplace,
+      **for both Claude Code and Codex CLI** (`/plugin marketplace add` +
+      `/plugin install <name>@ru-legal-skills`, and
+      `codex plugin marketplace add` + `codex plugin add <name>@ru-legal-skills`).
+      *(All three plugins were missing install instructions entirely on
+      2026-09-10; fixed the same day. Then, separately, all three needed a
+      second pass to add the Codex half once the marketplace itself was made
+      Codex-compatible — re-check this box after any change to
+      `marketplace.json`'s `source` shape, not just once.)*
 - [ ] Any file/module count or list in prose matches what's actually in the
       repo right now. *(gost-ed-mashiny's README said "5 модулей" for two
       commits after a 6th file was added.)*
@@ -66,15 +70,22 @@ each one.
 ## After ANY commit to a plugin repo — sync the marketplace
 
 `ru-legal-skills/.claude-plugin/marketplace.json` pins each plugin to an
-exact commit sha. **A commit to `legal-ru`, `patent-ru`, or
+exact commit sha via `source.ref`. **A commit to `legal-ru`, `patent-ru`, or
 `gost-ed-mashiny` immediately makes that plugin's marketplace entry stale**
-— this happened four separate times in one session (three ordinary commits
-plus one `git filter-repo` history rewrite, which changes every sha in the
-rewritten repo, not just the tip).
+— this has happened many times across this family's history (ordinary
+commits, plus at least one `git filter-repo` history rewrite, which changes
+every sha in the rewritten repo, not just the tip).
+
+**Schema note:** entries use `"source": {"source": "url", "url": "https://github.com/<owner>/<repo>.git", "ref": "<sha>"}`
+— not `"source": "github"` with `repo`/`commit`/`sha` fields, which is a
+Claude Code-only shorthand that Codex's own plugin schema does not
+recognize (confirmed live: Codex silently listed zero plugins from a
+`github`-sourced marketplace, `url`-sourced entries installed correctly on
+both runtimes). If you find a `github`-shaped entry anywhere in this file,
+that's a regression — convert it to `url`.
 
 - [ ] `git -C <plugin-repo> rev-parse HEAD` → update that plugin's
-      `source.commit` **and** `source.sha` (both fields, kept identical —
-      see below) in `marketplace.json`.
+      `source.ref` in `marketplace.json`.
 - [ ] If the plugin's `SKILL.md` `description` changed, copy the new one
       into the marketplace entry's `description` verbatim — don't leave the
       marketplace advertising stale wording (or a stale designation, as
@@ -85,19 +96,14 @@ rewritten repo, not just the tip).
       pin left uncommitted is worse than an old commit, because it looks
       current.
 
-*(Correction, 2026-09-11, found during an Opus 5 review of this family:
-the earlier version of this note claimed `claude-plugins-official`'s own
-`"source": "github"` entries use the same value for `commit` and `sha`.
-**That is false — checked directly.** Its two real `"github"`-source
-entries (`fullstory`, `jfrog`) each carry two genuinely different 40-char
-hex values for `commit` and `sha`. What each field actually means is still
-undocumented — `commit` is presumably a git commit sha; `sha` might be a
-tree hash, a content digest, or something else entirely, and this has not
-been confirmed. This family nonetheless sets both fields to the plugin's
-same real commit sha, **as a deliberate simplification given the unknown
-semantics, not because it mirrors the reference** — it previously did, and
-does not. If this ever breaks an install, that field pair is the first
-thing to question.)*
+*(History: this family briefly used the `"github"` source shorthand with
+duplicated `commit`/`sha` fields, on a mistaken belief that
+`claude-plugins-official`'s own `github`-source entries do the same — they
+don't, checked directly, its two real examples carry two different values
+for those fields with undocumented distinct meaning. Moot now: switched to
+`url`/`ref` the same day, for the unrelated and more important reason that
+Codex doesn't parse `github`-sourced entries at all. See the schema note
+above.)*
 
 ## Testing status — track it, don't assume it
 
@@ -113,7 +119,7 @@ thing to question.)*
       pressure-testing. Behavioral discipline under pressure (does it
       resist fabricating a нормируемое значение when pushed, does it
       actually call `gost_lookup.py` instead of answering from memory) is
-      still open as of 2026-09-11.
+      still open as of 2026-09-10.
 - [ ] A future plugin: run both — live-data verification is necessary but
       not sufficient; see `docs/norms-verification-convention.md` for the
       citation side and the parent `lazy-skill-library` project's
