@@ -16,10 +16,9 @@
       },
       "category": "legal",
       "source": {
-        "source": "github",
-        "repo": "serjdrej/gost-ed-mashiny",
-        "commit": "8e4333e9b198fbe83742cff09aed0459043f8c74",
-        "sha": "8e4333e9b198fbe83742cff09aed0459043f8c74"
+        "source": "url",
+        "url": "https://github.com/serjdrej/gost-ed-mashiny.git",
+        "ref": "8e4333e9b198fbe83742cff09aed0459043f8c74"
       },
       "homepage": "https://github.com/serjdrej/gost-ed-mashiny"
     },
@@ -32,10 +31,9 @@
       },
       "category": "legal",
       "source": {
-        "source": "github",
-        "repo": "serjdrej/legal-ru",
-        "commit": "8ad2350af1cf7a87018016068fceca5c23680473",
-        "sha": "8ad2350af1cf7a87018016068fceca5c23680473"
+        "source": "url",
+        "url": "https://github.com/serjdrej/legal-ru.git",
+        "ref": "8ad2350af1cf7a87018016068fceca5c23680473"
       },
       "homepage": "https://github.com/serjdrej/legal-ru"
     },
@@ -48,10 +46,9 @@
       },
       "category": "legal",
       "source": {
-        "source": "github",
-        "repo": "serjdrej/patent-ru",
-        "commit": "76b44fdf399d614a972e84ee8346237a591fc2e3",
-        "sha": "76b44fdf399d614a972e84ee8346237a591fc2e3"
+        "source": "url",
+        "url": "https://github.com/serjdrej/patent-ru.git",
+        "ref": "76b44fdf399d614a972e84ee8346237a591fc2e3"
       },
       "homepage": "https://github.com/serjdrej/patent-ru"
     }
