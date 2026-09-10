@@ -156,15 +156,18 @@ qualified professional's review, never advice on its own:
   (repeated verbatim at the end of `references/corporate.md`: *"Это черновик
   для проверки квалифицированным юристом, а не юридическая консультация."*)
 
-`gost-ed-mashiny` does not carry an identically-shaped standing line in the
-files read for this document; its closest equivalents are narrower and
-norm-specific — e.g. *"реестр... не заменяет действующую редакцию"* (the
-registry doesn't replace the current text) and the "не выдумывать
-нормируемые значения... плейсхолдер, а не правдоподобное число" rule in
-`SKILL.md`. A future edit to `gost-ed-mashiny` should consider adding an
-explicit standing disclaimer in the same shape as the other two, for
-consistency — but that is a note for that plugin's own repository, not
-something this document can fix from outside it.
+*(Updated 2026-09-10, fourth review: `gost-ed-mashiny` added its own standing
+line since this document was first written —* "Черновик, не готовый к подаче
+документ" *— now near the top of `SKILL.md`'s rules section, matching the
+other two in substance. All three plugins now carry one.)*
+
+**Position matters as much as presence.** `legal-ru` and `gost-ed-mashiny`
+place theirs early (paragraph three of the README, and near the top of the
+rules list in `SKILL.md`). `patent-ru`'s — *"Правовая оговорка..."* — is
+currently the **last** bullet of a seven-item list in `SKILL.md`, and the
+last bullet of "Чего НЕ делает" in its README. A disclaimer a reader has to
+scroll past everything else to reach does less work than one stated early —
+if you're touching `patent-ru`, moving it isn't a rewrite, just a reorder.
 
 ## 7. What this document is for
 
