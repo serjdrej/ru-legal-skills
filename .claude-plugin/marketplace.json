@@ -1,0 +1,59 @@
+{
+  "$schema": "https://anthropic.com/claude-code/marketplace.schema.json",
+  "name": "ru-legal-skills",
+  "description": "Claude Code skills for Russian-law and Russian-standards (ГОСТ) work, built by a founder acting as his own lawyer and engineer. Starts with patent prosecution, core commercial/corporate/personal-data law, and machinery operating documentation, with room to grow into adjacent areas.",
+  "owner": {
+    "name": "Сергей Дрейзин",
+    "email": "sergejdrejzin@gmail.com"
+  },
+  "plugins": [
+    {
+      "name": "gost-ed-mashiny",
+      "description": "Authors Russian machinery operating documentation — руководство по эксплуатации (РЭ) per ГОСТ Р 2.610-2019 and паспорт (ПС) per ГОСТ 2.601-2019 — and audits their content against ТР ТС 010/2011. Use when the user asks to write, review, or complete эксплуатационная документация, руководство или инструкция по эксплуатации, паспорт изделия, формуляр, ЗИП or КДС for a machine, machine tool, construction or process equipment, or is preparing the document set for декларирование or сертификация under ТР ТС 010/2011 (EAC).",
+      "author": {
+        "name": "Сергей Дрейзин",
+        "email": "sergejdrejzin@gmail.com"
+      },
+      "category": "legal",
+      "source": {
+        "source": "github",
+        "repo": "serjdrej/gost-ed-mashiny",
+        "commit": "96c182f80b3f6c91a07b12fd3231f9f152968d4e",
+        "sha": "96c182f80b3f6c91a07b12fd3231f9f152968d4e"
+      },
+      "homepage": "https://github.com/serjdrej/gost-ed-mashiny"
+    },
+    {
+      "name": "legal-ru",
+      "description": "Russian-law skill for a founder acting as his own lawyer — contracts and the режим коммерческой тайны (NDA/соглашение о конфиденциальности), 152-ФЗ personal data (политика конфиденциальности, уведомление Роскомнадзора, локализация), corporate (корпоративный договор, решения участников, ЕГРЮЛ), and pre-litigation (претензионный порядок, исковая давность, процессуальные сроки). Use when the user mentions проверить договор, режим коммерческой тайны, соглашение о конфиденциальности, NDA, политика конфиденциальности, персональные данные, уведомление Роскомнадзора, трансграничная передача данных, корпоративный договор, устав, ЕГРЮЛ, претензионный порядок, исковая давность, исковое заявление, трудовой договор (глава 14 ТК РФ — cross-referenced, not a full employment branch), or cites a Russian statute/article (ГК РФ, ТК РФ, 152-ФЗ, 98-ФЗ, 14-ФЗ, 208-ФЗ, 129-ФЗ, АПК РФ, ГПК РФ) and asks whether it applies. Intellectual property is out of scope — route to patent-ru instead.",
+      "author": {
+        "name": "Сергей Дрейзин",
+        "email": "sergejdrejzin@gmail.com"
+      },
+      "category": "legal",
+      "source": {
+        "source": "github",
+        "repo": "serjdrej/legal-ru",
+        "commit": "c6e1f2c7a36ec03cd835690a5d9e828312adbd72",
+        "sha": "c6e1f2c7a36ec03cd835690a5d9e828312adbd72"
+      },
+      "homepage": "https://github.com/serjdrej/legal-ru"
+    },
+    {
+      "name": "patent-ru",
+      "description": "Russian patent prosecution and prior-art search skill — combines Rospatent (ИС ПП) database search, including the Soviet/Russian fund via the official search-platform API, with drafting and editing of application documents under FIPS requirements (order of the Russian Ministry of Economic Development No. 107, 21.02.2023). Use when the user mentions патентный поиск, поиск аналогов, база Роспатента, формула изобретения, заявка на изобретение, уведомление ФИПС, нарушение единства изобретения, выделенная заявка, ответ на запрос экспертизы, реферат, прототип, новая материя, п.2 ст.1378 ГК РФ, or asks to draft, review, or audit a Russian invention application. Two branches — search and drafting — never load together; GOST/ЕСКД drawing standards are out of scope.",
+      "author": {
+        "name": "Сергей Дрейзин",
+        "email": "sergejdrejzin@gmail.com"
+      },
+      "category": "legal",
+      "source": {
+        "source": "github",
+        "repo": "serjdrej/patent-ru",
+        "commit": "c6a0b7dee5a7b3348ff32a20b05eabbf21f79979",
+        "sha": "c6a0b7dee5a7b3348ff32a20b05eabbf21f79979"
+      },
+      "homepage": "https://github.com/serjdrej/patent-ru"
+    }
+  ]
+}
