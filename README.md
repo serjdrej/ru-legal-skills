@@ -1,11 +1,13 @@
 # ru-legal-skills
 
-Плагин-маркетплейс Claude Code для навыков, связанных с российским правом и
-российскими стандартами (ГОСТ). Собран основателем, который сам себе и юрист,
-и инженер: каждый навык покрывает область, где ему приходится действовать
-самостоятельно, без штатного специалиста.
+Плагин-маркетплейс для Claude Code и Codex, для навыков, связанных с
+российским правом и российскими стандартами (ГОСТ). Собран основателем,
+который сам себе и юрист, и инженер: каждый навык покрывает область, где ему
+приходится действовать самостоятельно, без штатного специалиста.
 
 ## Установка
+
+**Claude Code:**
 
 ```
 /plugin marketplace add serjdrej/ru-legal-skills
@@ -18,6 +20,26 @@
 /plugin install legal-ru@ru-legal-skills
 /plugin install patent-ru@ru-legal-skills
 ```
+
+**Codex CLI:**
+
+```
+codex plugin marketplace add serjdrej/ru-legal-skills
+```
+
+Затем для каждого нужного навыка:
+
+```
+codex plugin add gost-ed-mashiny@ru-legal-skills
+codex plugin add legal-ru@ru-legal-skills
+codex plugin add patent-ru@ru-legal-skills
+```
+
+Обе команды читают один и тот же `.claude-plugin/marketplace.json` — отдельного
+манифеста для Codex не нужно. Источник каждого плагина — форма `"url"`
+(корень git-репозитория, закреплённый на точном коммите через `ref`), а не
+специфичная для Claude Code форма `"github"` — она уже проверена вживую на
+обоих рантаймах.
 
 ## Навыки
 
@@ -39,8 +61,17 @@
 Чтобы добавить такой репозиторий в этот маркетплейс, нужна ровно одна новая
 запись в массиве `plugins` файла `.claude-plugin/marketplace.json` — с полями
 `name`, `description` (взятым из `SKILL.md` этого репозитория), `author`,
-`category` и `source` (`owner/name` репозитория и закреплённый SHA коммита).
-Больше ничего в этом репозитории менять не нужно.
+`category` и `source`:
+```json
+"source": {
+  "source": "url",
+  "url": "https://github.com/<owner>/<repo>.git",
+  "ref": "<закреплённый SHA коммита>"
+}
+```
+(не `"source": "github"` — эта форма распознаётся только Claude Code, Codex её
+молча пропускает; `"url"` работает в обоих.) Больше ничего в этом репозитории
+менять не нужно.
 
 Если новый навык цитирует нормы (законы, ГОСТы, техрегламенты), прочитайте
 [docs/norms-verification-convention.md](docs/norms-verification-convention.md)
