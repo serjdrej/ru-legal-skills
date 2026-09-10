@@ -9,7 +9,7 @@
   "plugins": [
     {
       "name": "gost-ed-mashiny",
-      "description": "Authors Russian machinery operating documentation — руководство по эксплуатации (РЭ) per ГОСТ Р 2.610-2019 and паспорт (ПС) per ГОСТ 2.601-2019 — and audits their content against ТР ТС 010/2011. Use when the user asks to write, review, or complete эксплуатационная документация, руководство или инструкция по эксплуатации, паспорт изделия, формуляр, ЗИП or КДС for a machine, machine tool, construction or process equipment, or is preparing the document set for декларирование or сертификация under ТР ТС 010/2011 (EAC).",
+      "description": "Authors Russian machinery operating documentation — руководство по эксплуатации (РЭ) per ГОСТ Р 2.610-2019 and паспорт (ПС) per ГОСТ Р 2.601-2019 — and audits their content against ТР ТС 010/2011. Use when the user asks to write, review, or complete эксплуатационная документация, руководство или инструкция по эксплуатации, паспорт изделия, формуляр, ЗИП or КДС for a machine, machine tool, construction or process equipment, or is preparing the document set for декларирование or сертификация under ТР ТС 010/2011 (EAC).",
       "author": {
         "name": "Сергей Дрейзин",
         "email": "sergejdrejzin@gmail.com"
@@ -18,8 +18,8 @@
       "source": {
         "source": "github",
         "repo": "serjdrej/gost-ed-mashiny",
-        "commit": "96c182f80b3f6c91a07b12fd3231f9f152968d4e",
-        "sha": "96c182f80b3f6c91a07b12fd3231f9f152968d4e"
+        "commit": "b5cdd5cc4fa499a825ea5ed9fce4d753708ec34c",
+        "sha": "b5cdd5cc4fa499a825ea5ed9fce4d753708ec34c"
       },
       "homepage": "https://github.com/serjdrej/gost-ed-mashiny"
     },
