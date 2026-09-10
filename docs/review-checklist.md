@@ -60,8 +60,9 @@ each one.
       which rewrites every commit sha — see the next section.)* `.gitignore`
       should cover `*.log` and `__pycache__/` going forward.
 - [ ] No dot-prefixed path, no `hooks/`/`commands/`/`agents/` directory
-      anywhere (breaks import into `lazy-skill-library` and similar
-      importers).
+      anywhere (breaks import into skill-library tooling that scans a
+      plugin's tree, such as the one this family's own skills have been
+      imported into).
 - [ ] `git config user.name`/`user.email` set **locally in that repo**
       before the first commit — global config is not set on this machine.
       *(Hit twice this session: "Author identity unknown," both times on a
@@ -121,9 +122,14 @@ above.)*
       actually call `gost_lookup.py` instead of answering from memory) is
       still open as of 2026-09-10.
 - [ ] A future plugin: run both — live-data verification is necessary but
-      not sufficient; see `docs/norms-verification-convention.md` for the
-      citation side and the parent `lazy-skill-library` project's
-      `writing-skills` skill for the RED→GREEN→REFACTOR side.
+      not sufficient. See `docs/norms-verification-convention.md` for the
+      citation side. For the RED→GREEN→REFACTOR side: run the scenario
+      against a subagent without the skill loaded (RED, record the baseline
+      failure verbatim), write/adjust the skill to address exactly that
+      failure (GREEN, re-run and confirm it now complies), then hunt for a
+      new rationalization under repeated pressure and close it (REFACTOR) —
+      see `legal-ru/docs/dispatch-history.md` for a worked example of this
+      cycle run against this family's own content.
 
 ## What this document is not
 
