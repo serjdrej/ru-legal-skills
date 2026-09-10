@@ -85,11 +85,19 @@ rewritten repo, not just the tip).
       pin left uncommitted is worse than an old commit, because it looks
       current.
 
-*(Why both `commit` and `sha` carry the same value: the schema used by
-`claude-plugins-official`'s own marketplace.json has both fields for a
-`"source": "github"` entry; their exact distinct purpose is undocumented,
-so this family sets both to the same real value rather than guessing which
-one matters.)*
+*(Correction, 2026-09-11, found during an Opus 5 review of this family:
+the earlier version of this note claimed `claude-plugins-official`'s own
+`"source": "github"` entries use the same value for `commit` and `sha`.
+**That is false — checked directly.** Its two real `"github"`-source
+entries (`fullstory`, `jfrog`) each carry two genuinely different 40-char
+hex values for `commit` and `sha`. What each field actually means is still
+undocumented — `commit` is presumably a git commit sha; `sha` might be a
+tree hash, a content digest, or something else entirely, and this has not
+been confirmed. This family nonetheless sets both fields to the plugin's
+same real commit sha, **as a deliberate simplification given the unknown
+semantics, not because it mirrors the reference** — it previously did, and
+does not. If this ever breaks an install, that field pair is the first
+thing to question.)*
 
 ## Testing status — track it, don't assume it
 
