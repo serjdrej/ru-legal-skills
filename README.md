@@ -36,6 +36,7 @@
 Затем для каждого нужного навыка:
 
 ```
+/plugin install arbitrazh-ru@ru-legal-skills
 /plugin install gost-ed-mashiny@ru-legal-skills
 /plugin install legal-ru@ru-legal-skills
 /plugin install patent-ru@ru-legal-skills
@@ -50,6 +51,7 @@ codex plugin marketplace add serjdrej/ru-legal-skills
 Затем для каждого нужного навыка:
 
 ```
+codex plugin add arbitrazh-ru@ru-legal-skills
 codex plugin add gost-ed-mashiny@ru-legal-skills
 codex plugin add legal-ru@ru-legal-skills
 codex plugin add patent-ru@ru-legal-skills
@@ -65,6 +67,7 @@ codex plugin add patent-ru@ru-legal-skills
 
 | Навык | Описание | Репозиторий |
 |---|---|---|
+| `arbitrazh-ru` | Арбитражные суды (АПК РФ) после неразрешённой претензии: подсудность, исковое заявление, госпошлина, обеспечительные меры, сроки инстанций, и проверяемая работа с судебной практикой (Пленум ВС РФ, обзоры, конкретные дела). | [serjdrej/arbitrazh-ru](https://github.com/serjdrej/arbitrazh-ru) |
 | `gost-ed-mashiny` | Эксплуатационная документация на машины (РЭ по ГОСТ Р 2.610-2019, паспорт по ГОСТ Р 2.601-2019) и аудит по ТР ТС 010/2011. | [serjdrej/gost-ed-mashiny](https://github.com/serjdrej/gost-ed-mashiny) |
 | `legal-ru` | Российское право для основателя-самоюриста: коммерческая тайна/NDA, договор подряда/строительный подряд (со стороны подрядчика), 152-ФЗ (персональные данные), корпоративное право, досудебный порядок. | [serjdrej/legal-ru](https://github.com/serjdrej/legal-ru) |
 | `patent-ru` | Патентный поиск и делопроизводство РФ: поиск аналогов через API Роспатента и составление/редактура заявочных документов по Требованиям № 107. | [serjdrej/patent-ru](https://github.com/serjdrej/patent-ru) |
