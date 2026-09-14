@@ -9,7 +9,7 @@
   "plugins": [
     {
       "name": "arbitrazh-ru",
-      "description": "Russian-arbitrazh-court skill for a founder after an unresolved претензия: АПК РФ jurisdiction and подсудность, исковое заявление (ст.125–126), оставление без движения/возврат, госпошлина, обеспечительные меры, судебные расходы, and appellate/cassation/supervisory deadlines. Also finds and cites ВС РФ Пленум/Обзоры and treats a конкретное дело as CASE CITATION requiring kad.arbitr.ru verification. Triggers: арбитражный суд, АПК РФ, исковое заявление, подсудность, подведомственность, госпошлина, обеспечительные меры, оставить без движения, возврат иска, апелляционная жалоба, кассационная жалоба, надзорная жалоба, судебные расходы, Пленум ВС РФ, обзор судебной практики, номер арбитражного дела. «Арбитраж» here means state commercial courts, not private arbitration; courts of general jurisdiction, enforcement and IP are out of scope.",
+      "description": "Russian court-procedure skill for a founder after an unresolved claim. Covers state arbitrazh courts (АПК РФ): jurisdiction, claim (ст.125–126), fees, interim measures, practice and review deadlines; and a narrow courts-of-general-jurisdiction (ГПК РФ) branch: employee disputes (dismissal, wages, reinstatement), consumer claims and recovery of a debt from a person (судебный приказ vs иск). Triggers: арбитражный суд, АПК РФ, исковое заявление, подсудность, обеспечительные меры, госпошлина, апелляционная жалоба, кассационная жалоба, судебная практика; ГПК РФ, суд общей юрисдикции, мировой судья, районный суд, трудовой спор, увольнение, зарплата, восстановление на работе, потребительский спор, защита прав потребителей, судебный приказ, взыскание долга с физлица. «Арбитраж» means state commercial courts, not private arbitration; excludes family, housing, inheritance, other GPK proceedings, criminal process, IP and enforcement.",
       "author": {
         "name": "Сергей Дрейзин",
         "email": "sergejdrejzin@gmail.com"
@@ -18,7 +18,7 @@
       "source": {
         "source": "url",
         "url": "https://github.com/serjdrej/arbitrazh-ru.git",
-        "ref": "94867f1f40b8d46075bd8f2bc1126530ad2bae68"
+        "ref": "693145875a80b4c729c279c15807eb1b9aa52ab9"
       },
       "homepage": "https://github.com/serjdrej/arbitrazh-ru"
     },
