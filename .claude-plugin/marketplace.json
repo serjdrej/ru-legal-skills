@@ -8,6 +8,21 @@
   },
   "plugins": [
     {
+      "name": "arbitrazh-ru",
+      "description": "Russian-arbitrazh-court skill for a founder after an unresolved претензия: АПК РФ jurisdiction and подсудность, исковое заявление (ст.125–126), оставление без движения/возврат, госпошлина, обеспечительные меры, судебные расходы, and appellate/cassation/supervisory deadlines. Also finds and cites ВС РФ Пленум/Обзоры and treats a конкретное дело as CASE CITATION requiring kad.arbitr.ru verification. Triggers: арбитражный суд, АПК РФ, исковое заявление, подсудность, подведомственность, госпошлина, обеспечительные меры, оставить без движения, возврат иска, апелляционная жалоба, кассационная жалоба, надзорная жалоба, судебные расходы, Пленум ВС РФ, обзор судебной практики, номер арбитражного дела. «Арбитраж» here means state commercial courts, not private arbitration; courts of general jurisdiction, enforcement and IP are out of scope.",
+      "author": {
+        "name": "Сергей Дрейзин",
+        "email": "sergejdrejzin@gmail.com"
+      },
+      "category": "legal",
+      "source": {
+        "source": "url",
+        "url": "https://github.com/serjdrej/arbitrazh-ru.git",
+        "ref": "94867f1f40b8d46075bd8f2bc1126530ad2bae68"
+      },
+      "homepage": "https://github.com/serjdrej/arbitrazh-ru"
+    },
+    {
       "name": "gost-ed-mashiny",
       "description": "Authors Russian machinery operating documentation — руководство по эксплуатации (РЭ) per ГОСТ Р 2.610-2019 and паспорт (ПС) per ГОСТ Р 2.601-2019 — and audits their content against ТР ТС 010/2011. Use when the user asks to write, review, or complete эксплуатационная документация, руководство или инструкция по эксплуатации, паспорт изделия, формуляр, ЗИП or КДС for a machine, machine tool, construction or process equipment, or is preparing the document set for декларирование or сертификация under ТР ТС 010/2011 (EAC).",
       "author": {
