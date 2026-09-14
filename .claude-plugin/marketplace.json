@@ -9,7 +9,7 @@
   "plugins": [
     {
       "name": "arbitrazh-ru",
-      "description": "Russian court-procedure skill for a founder after an unresolved claim. Covers state arbitrazh courts (АПК РФ): jurisdiction, claim (ст.125–126), fees, interim measures, practice and review deadlines; and a narrow courts-of-general-jurisdiction (ГПК РФ) branch: employee disputes (dismissal, wages, reinstatement), consumer claims and recovery of a debt from a person (судебный приказ vs иск). Triggers: арбитражный суд, АПК РФ, исковое заявление, подсудность, обеспечительные меры, госпошлина, апелляционная жалоба, кассационная жалоба, судебная практика; ГПК РФ, суд общей юрисдикции, мировой судья, районный суд, трудовой спор, увольнение, зарплата, восстановление на работе, потребительский спор, защита прав потребителей, судебный приказ, взыскание долга с физлица. «Арбитраж» means state commercial courts, not private arbitration; excludes family, housing, inheritance, other GPK proceedings, criminal process, IP and enforcement.",
+      "description": "Russian court-procedure skill for a founder after an unresolved claim. Covers state arbitrazh courts (АПК РФ) — jurisdiction, claim (ст.125–126), fees, interim measures, practice and review deadlines; and a narrow courts-of-general-jurisdiction (ГПК РФ) branch — employee disputes (dismissal, wages, reinstatement), consumer claims and recovery of a debt from a person (судебный приказ vs иск). Triggers — арбитражный суд, АПК РФ, исковое заявление, подсудность, обеспечительные меры, госпошлина, апелляционная жалоба, кассационная жалоба, судебная практика; ГПК РФ, суд общей юрисдикции, мировой судья, районный суд, трудовой спор, увольнение, зарплата, восстановление на работе, потребительский спор, защита прав потребителей, судебный приказ, взыскание долга с физлица. «Арбитраж» means state commercial courts, not private arbitration; excludes family, housing, inheritance, other GPK proceedings, criminal process, IP and enforcement.",
       "author": {
         "name": "Сергей Дрейзин",
         "email": "sergejdrejzin@gmail.com"
@@ -18,7 +18,7 @@
       "source": {
         "source": "url",
         "url": "https://github.com/serjdrej/arbitrazh-ru.git",
-        "ref": "5d1fd5d82a4b1216b8486cfaf96bcfe850b99823"
+        "ref": "101712002ea3e1f56095215ee2c40814883271a2"
       },
       "homepage": "https://github.com/serjdrej/arbitrazh-ru"
     },
@@ -39,7 +39,7 @@
     },
     {
       "name": "legal-ru",
-      "description": "Russian-law skill for a founder — contracts and the режим коммерческой тайны (NDA/соглашение о конфиденциальности), договор подряда and строительный подряд from a contractor's side, 152-ФЗ personal data (политика конфиденциальности, уведомление Роскомнадзора, локализация), corporate (корпоративный договор, решения участников, ЕГРЮЛ), and pre-litigation (претензионный порядок, исковая давность, процессуальные сроки). Triggers: проверить договор, режим коммерческой тайны, соглашение о конфиденциальности, NDA, персональные данные, уведомление Роскомнадзора, трансграничная передача данных, договор подряда, строительный подряд, приёмка работ, акт выполненных работ, односторонний акт, гарантия качества работ, корпоративный договор, устав, ЕГРЮЛ, претензионный порядок, исковая давность, исковое заявление, трудовой договор (глава 14 ТК РФ, cross-referenced only), or cites ГК РФ, ТК РФ, 152-ФЗ, 98-ФЗ, 14-ФЗ, 208-ФЗ, 129-ФЗ, АПК РФ, ГПК РФ. IP is out of scope — route to patent-ru instead.",
+      "description": "Russian-law skill for a founder — contracts and the режим коммерческой тайны (NDA/соглашение о конфиденциальности), договор подряда and строительный подряд from a contractor's side, 152-ФЗ personal data (политика конфиденциальности, уведомление Роскомнадзора, локализация), corporate (корпоративный договор, решения участников, ЕГРЮЛ), and pre-litigation (претензионный порядок, исковая давность, процессуальные сроки). Triggers — проверить договор, режим коммерческой тайны, соглашение о конфиденциальности, NDA, персональные данные, уведомление Роскомнадзора, трансграничная передача данных, договор подряда, строительный подряд, приёмка работ, акт выполненных работ, односторонний акт, гарантия качества работ, корпоративный договор, устав, ЕГРЮЛ, претензионный порядок, исковая давность, исковое заявление, трудовой договор (глава 14 ТК РФ, cross-referenced only), or cites ГК РФ, ТК РФ, 152-ФЗ, 98-ФЗ, 14-ФЗ, 208-ФЗ, 129-ФЗ, АПК РФ, ГПК РФ. IP is out of scope — route to patent-ru instead.",
       "author": {
         "name": "Сергей Дрейзин",
         "email": "sergejdrejzin@gmail.com"
@@ -48,7 +48,7 @@
       "source": {
         "source": "url",
         "url": "https://github.com/serjdrej/legal-ru.git",
-        "ref": "c90c7bdf82c9ad9058e241caedc9b15578779a06"
+        "ref": "2986c1f2f009911498c3dda1acfbc61ba60db901"
       },
       "homepage": "https://github.com/serjdrej/legal-ru"
     },
