@@ -24,7 +24,7 @@
     },
     {
       "name": "legal-ru",
-      "description": "Russian-law skill for a founder acting as his own lawyer — contracts and the режим коммерческой тайны (NDA/соглашение о конфиденциальности), 152-ФЗ personal data (политика конфиденциальности, уведомление Роскомнадзора, локализация), corporate (корпоративный договор, решения участников, ЕГРЮЛ), and pre-litigation (претензионный порядок, исковая давность, процессуальные сроки). Use when the user mentions проверить договор, режим коммерческой тайны, соглашение о конфиденциальности, NDA, политика конфиденциальности, персональные данные, уведомление Роскомнадзора, трансграничная передача данных, корпоративный договор, устав, ЕГРЮЛ, претензионный порядок, исковая давность, исковое заявление, трудовой договор (глава 14 ТК РФ — cross-referenced, not a full employment branch), or cites a Russian statute/article (ГК РФ, ТК РФ, 152-ФЗ, 98-ФЗ, 14-ФЗ, 208-ФЗ, 129-ФЗ, АПК РФ, ГПК РФ) and asks whether it applies. Intellectual property is out of scope — route to patent-ru instead.",
+      "description": "Russian-law skill for a founder — contracts and the режим коммерческой тайны (NDA/соглашение о конфиденциальности), договор подряда and строительный подряд from a contractor's side, 152-ФЗ personal data (политика конфиденциальности, уведомление Роскомнадзора, локализация), corporate (корпоративный договор, решения участников, ЕГРЮЛ), and pre-litigation (претензионный порядок, исковая давность, процессуальные сроки). Triggers: проверить договор, режим коммерческой тайны, соглашение о конфиденциальности, NDA, персональные данные, уведомление Роскомнадзора, трансграничная передача данных, договор подряда, строительный подряд, приёмка работ, акт выполненных работ, односторонний акт, гарантия качества работ, корпоративный договор, устав, ЕГРЮЛ, претензионный порядок, исковая давность, исковое заявление, трудовой договор (глава 14 ТК РФ, cross-referenced only), or cites ГК РФ, ТК РФ, 152-ФЗ, 98-ФЗ, 14-ФЗ, 208-ФЗ, 129-ФЗ, АПК РФ, ГПК РФ. IP is out of scope — route to patent-ru instead.",
       "author": {
         "name": "Сергей Дрейзин",
         "email": "sergejdrejzin@gmail.com"
@@ -33,7 +33,7 @@
       "source": {
         "source": "url",
         "url": "https://github.com/serjdrej/legal-ru.git",
-        "ref": "37f6ec734f31c1f83b6619d5260826d3e9354a42"
+        "ref": "0796aba4fd2ca4ff912a32f7024f333b05adbe76"
       },
       "homepage": "https://github.com/serjdrej/legal-ru"
     },
