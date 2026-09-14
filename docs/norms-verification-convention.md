@@ -61,37 +61,54 @@ category, not a one-off: it lists the breach-notification timetable
 pre-litigation procedural terms as the class of entry that gets it —
 "Относиться к ним строже, чем к остальным записям."
 
-## 3. Verify via a script the user runs himself — never the agent's own network
+## 3. Verify via the lookup script — run it yourself when you can, never guess
 
-House rule, stated identically in all three plugins' SKILL.md: an agent
-dispatched to draft with these skills never treats its own live network
-access as a source of truth for a norm's current text. Verification runs as
-a script **the user executes on his own machine**, or a documented manual
-navigation route.
+House rule, stated in all three plugins' SKILL.md: an agent never presents a
+citation as current without a verification instruction attached. But **"the
+user runs it himself" is not the same as "the agent never runs it"** — an
+agent running Claude Code *locally*, as an installed skill on the user's own
+machine, should actually run the lookup script itself before relying on a
+registry entry, not only tell the user to. The distinction that matters is
+local-vs-cloud execution, not agent-vs-human.
 
-The concrete, counterintuitive finding behind this rule, from this project's
-own build history:
+**A corrected finding, from this project's own build history — read this one
+carefully, it cost several days:** `publication.pravo.gov.ru`
+(`legal-ru`'s primary source) was documented for days as "unreachable from
+every agent sandbox — a geo-block." That was wrong. The real cause: every
+URL used `https://`, and this host's HTTPS hangs on connect for any client
+tried, while plain `http://` answers in well under a second — same host,
+same machine, same network. Two things hid this: command-line tools tested
+first failed for an unrelated reason that looked similar (Windows/Schannel
+TLS issues with some HTTP clients), and Claude's own `WebFetch` tool
+**silently upgrades `http://` to `https://`** — so testing through that one
+tool kept "reconfirming" the wrong diagnosis no matter how many times it was
+retried. The actual script (plain Python `urllib`) was never tried against
+`http://` until the scheme itself was questioned — full account in
+`legal-ru/docs/BRIEF.md`, "The lookup mechanism."
 
-- `publication.pravo.gov.ru` (`legal-ru`'s primary source) was **unreachable
-  from every agent sandbox tried** — Claude's WebFetch, Bash/curl, and
-  Codex's own network-enabled `os-sandbox` all timed out on every path,
-  reading as a geo-block on non-Russian egress IPs (`legal-ru/docs/BRIEF.md`,
-  "The lookup mechanism"). It was confirmed reachable only from the project
-  owner's own browser/network.
-- `rst.gov.ru` and `eaeunion.org` (`gost-ed-mashiny`'s sources) were **not**
-  blocked — reachable directly during development, to the point that the
-  open-data CSV catalogues were actually downloaded and read while building
-  `gost-ed-mashiny/references/norms-registry.md` (see its "Что не
-  проверено" section).
+- `rst.gov.ru` and `eaeunion.org` (`gost-ed-mashiny`'s sources) were reachable
+  directly throughout, `https://` included — the open-data CSV catalogues
+  were actually downloaded and read while building
+  `gost-ed-mashiny/references/norms-registry.md`.
 
-**The lesson is not "agent sandboxes can't reach .gov domains" — that would
-be wrong.** The two outcomes sit side by side in this same project. The
-actual lesson: reachability must be tested per source, never assumed either
-way in either direction, and a lookup script must still be written to run
-standalone on the user's own machine regardless of what happened to work (or
-not) during development — because a working-today sandbox path is not a
-guarantee for the user's own later run, and an unreachable-today sandbox path
-does not mean the user's machine will also fail.
+**The lesson is not "agent sandboxes can't reach .gov domains" — that was
+always going to be wrong, and turned out to be wrong for a more specific
+reason than "test reachability per source" alone would have caught.** Two
+sharper corollaries, learned the hard way:
+
+- **A single failing tool call is not a confirmed block.** Test with the
+  actual client the script will use (here: plain `urllib`, not a browser
+  automation tool, not a fetch service with its own silent rewriting rules),
+  and test both `http://` and `https://` explicitly before concluding
+  either scheme is broken — a hung `https://` connection looks identical to
+  a geo-block from the outside.
+- **Local-vs-cloud execution is the axis that actually matters**, not
+  agent-vs-human. An agent running Claude Code locally, on the user's own
+  machine, has the user's own network — it should run the lookup script
+  itself. A cloud-hosted dispatch (a bridge sandbox, a fetch service running
+  off-machine) may still fail for reasons specific to that infrastructure;
+  that is a property of the specific tool, not evidence that "no agent" can
+  reach the host.
 
 ## 4. A script is not mandatory — an honest navigation route is a legitimate outcome
 
