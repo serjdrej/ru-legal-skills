@@ -33,7 +33,7 @@
       "source": {
         "source": "url",
         "url": "https://github.com/serjdrej/gost-ed-mashiny.git",
-        "ref": "6721658a38c62a8a3676d2add226b725a66c2993"
+        "ref": "2c9f1b8eae597fb73d9678606a9d813f852e38e2"
       },
       "homepage": "https://github.com/serjdrej/gost-ed-mashiny"
     },
@@ -63,7 +63,7 @@
       "source": {
         "source": "url",
         "url": "https://github.com/serjdrej/patent-ru.git",
-        "ref": "640423ee228a2c68f2621d60ef479d754f4f28d0"
+        "ref": "ac237f486f9cd13468d8c7dfa21deb3fc304a1fe"
       },
       "homepage": "https://github.com/serjdrej/patent-ru"
     }
