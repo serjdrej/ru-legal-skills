@@ -1,9 +1,9 @@
 # Review checklist for agents leading work on this family
 
-For any agent picking up `legal-ru`, `patent-ru`, `gost-ed-mashiny`, or a
-future plugin added to this marketplace. Every item below is here because it
-was a real gap found in this family, not a hypothetical — see the note after
-each one.
+For any agent picking up `legal-ru`, `patent-ru`, `gost-ed-mashiny`,
+`arbitrazh-ru`, or a future plugin added to this marketplace. Every item
+below is here because it was a real gap found in this family, not a
+hypothetical — see the note after each one.
 
 ## SKILL.md
 
@@ -23,6 +23,12 @@ each one.
 - [ ] If the skill cites external norms/standards, the citation rule points
       at a `references/norms-registry*.md` and a lookup script/route — see
       `docs/norms-verification-convention.md` for the shape.
+- [ ] Has a "Протокол пробела в базе" (or equivalent) covering questions
+      outside every registry entry — see `docs/norms-verification-convention.md`
+      §7. *(Added 2026-09-14 after the owner asked directly what the skill
+      should do when a question falls outside the registry entirely; adopted
+      same-day into all four plugins, each RED-GREEN tested separately —
+      don't assume one plugin's wording covers another's edge cases.)*
 - [ ] Frontmatter under 1024 chars (hard limit); flag if pushing past ~700
       without a specific findability reason.
 
@@ -106,21 +112,47 @@ for those fields with undocumented distinct meaning. Moot now: switched to
 Codex doesn't parse `github`-sourced entries at all. See the schema note
 above.)*
 
+## Public marketplace, private plugin repo — a real gotcha, not yet fixed
+
+*(Found 2026-09-14.)* `marketplace.json`'s `source.url` can point at a
+private GitHub repo without erroring — the marketplace file itself is public
+and installs fine, but `/plugin install <name>@ru-legal-skills` fails for
+anyone who isn't the repo owner, silently from the marketplace's point of
+view (the failure surfaces only as a clone error on the installer's own
+machine). `arbitrazh-ru` shipped this way: listed in the public README and
+`marketplace.json` while `serjdrej/arbitrazh-ru` is private. The owner's
+explicit call, asked directly: leave it as-is for now rather than make the
+repo public or pull the listing — re-check this before telling anyone
+outside the owner that this marketplace's fourth plugin is installable.
+**Check `gh repo view <owner>/<repo> --json isPrivate` for every plugin
+listed in `marketplace.json`** — don't infer visibility from the fact that a
+plugin is listed at all.
+
 ## Testing status — track it, don't assume it
 
 - [ ] `legal-ru`: full RED→GREEN→REFACTOR pressure-tested (4 branches, one
       scenario per highest-risk item, Sonnet 5 subagents) — done
-      2026-09-10.
+      2026-09-10; gap protocol RED-GREEN pass added 2026-09-14.
 - [ ] `patent-ru`: pre-dates this family's process; regression-tested
       against a live case per its own `references/audit-compliance.md` —
       not the same methodology, don't conflate the two when reporting
-      status.
+      status. Gap protocol RED-GREEN pass added 2026-09-14 (surfaced that
+      WebFetch and raw `urllib` both fail against rospatent.gov.ru on a
+      certificate-chain error — different mechanism from legal-ru's
+      http/https bug, don't conflate the two).
 - [ ] `gost-ed-mashiny`: **live citation data verified** (rst.gov.ru open
       data, real status pulled for both ГОСТы) — this is NOT the same as
       pressure-testing. Behavioral discipline under pressure (does it
       resist fabricating a нормируемое значение when pushed, does it
-      actually call `gost_lookup.py` instead of answering from memory) is
-      still open as of 2026-09-10.
+      actually call `gost_lookup.py` instead of answering from memory) —
+      closed 2026-09-14 via the gap-protocol RED-GREEN pass.
+- [ ] `arbitrazh-ru`: gap-protocol RED-GREEN pass done twice — the first was
+      self-graded inside one dispatch and explicitly not trusted as
+      sufficient; re-run as two independent subagents (one blind, one
+      loaded with SKILL.md) on 2026-09-14. The RED baseline fabricated a
+      named, dated Постановление Пленума with no verification marker — a
+      live example of the exact failure this whole family's discipline
+      exists to prevent, not a hypothetical.
 - [ ] A future plugin: run both — live-data verification is necessary but
       not sufficient. See `docs/norms-verification-convention.md` for the
       citation side. For the RED→GREEN→REFACTOR side: run the scenario

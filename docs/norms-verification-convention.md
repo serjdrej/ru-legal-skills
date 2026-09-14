@@ -1,12 +1,12 @@
 # Norms-verification convention
 
-This marketplace holds three plugins — `legal-ru`, `patent-ru`,
-`gost-ed-mashiny` — each of which cites Russian legal/technical norms
-(statutes, приказы, ГОСТы, техрегламенты) in its own drafting work. Each
-plugin implements its own citation registry (`references/norms-registry*.md`)
-and its own lookup script, **deliberately not shared code**: every plugin
-must install and work standalone, with no dependency on a sibling plugin in
-this marketplace.
+This marketplace holds four plugins — `legal-ru`, `patent-ru`,
+`gost-ed-mashiny`, `arbitrazh-ru` — each of which cites Russian legal/technical
+norms (statutes, приказы, ГОСТы, техрегламенты, court procedure) in its own
+drafting work. Each plugin implements its own citation registry
+(`references/norms-registry*.md`) and its own lookup script, **deliberately
+not shared code**: every plugin must install and work standalone, with no
+dependency on a sibling plugin in this marketplace.
 
 What they *do* share is a convention for how a registry entry should be
 shaped, so the three don't drift into incompatible habits. This document
@@ -186,7 +186,67 @@ last bullet of "Чего НЕ делает" in its README. A disclaimer a reader
 scroll past everything else to reach does less work than one stated early —
 if you're touching `patent-ru`, moving it isn't a rewrite, just a reorder.
 
-## 7. What this document is for
+## 7. The gap protocol — what to do when the registry has no entry at all
+
+*(Added 2026-09-14. Started in `legal-ru`, adapted — not copied, each plugin
+wrote its own — into `patent-ru`, `gost-ed-mashiny` and `arbitrazh-ru` the
+same day.)*
+
+Everything above governs a norm that already has a registry entry. None of it
+says what to do when a question falls **outside every entry, and outside the
+skill's own scope**: an adjacent area of RF law the plugin never built a
+branch for, a different jurisdiction (an EAEU member state, any foreign law),
+agency guidance, or court practice. Left unaddressed, the default failure
+mode is exactly what this whole family has fought elsewhere — answer fluently
+from training data as if it were a checked citation.
+
+`SKILL.md` in each plugin states a "Протокол пробела в базе"
+(`legal-ru`)/equivalent section, triggered *before* any registry is
+consulted, splitting the gap into two cases:
+
+1. **Still within scope, just not registered yet** (e.g. still RF federal
+   legislation for `legal-ru`/`patent-ru`, still a ГОСТ/ТР ТС for
+   `gost-ed-mashiny`, still a registered АПК/ГПК article for `arbitrazh-ru`).
+   Search live first with the plugin's own lookup script — never answer from
+   memory — then hand back the finding under a status tier deliberately
+   weaker than a normal registry entry: **AD HOC** — found live on a date,
+   not in any registry, not reviewed. **AD HOC has two sub-shapes and they
+   must not be conflated:** a search that only confirms an act's
+   existence/route/status (`legal-ru`'s `by-title`, `gost-ed-mashiny`'s
+   `status`) still leaves any specific figure — a percentage, a fee, a day
+   count — as unverified training-data recall; a search that actually reads
+   the source text (`patent-ru`'s live rospatent.gov.ru read of ст.1363,
+   which returned a verbatim fee line) can label that figure itself as
+   live-confirmed. State explicitly which sub-shape applies — the RED-GREEN
+   passes below exist specifically because this distinction was missing from
+   the first draft in every one of the three plugins that copied the idea.
+2. **Out of scope entirely** — another jurisdiction, court practice/agency
+   letters where the plugin's script cannot read practice (only acts), or a
+   subject area the plugin explicitly excludes. The script cannot help here.
+   Say so plainly and ask the user how to proceed (open web search marked
+   unverified, the user supplies the exact citation to verify live, or refer
+   to a qualified professional) rather than let general training-data
+   knowledge stand in unlabeled.
+
+**A statute/article number appearing in the question does not by itself make
+it case 1** if the actual ask is about practice interpreting that
+article rather than its text — `legal-ru`'s own RED-GREEN pass got this
+right but flagged it as needing judgment, not a mechanical rule.
+
+**RED→GREEN pressure-tested in all four plugins**, each against its own
+three questions chosen to hit both cases plus this exact trap. Every pass
+found and fixed a real wording gap rather than just confirming the design —
+worth reading before assuming another plugin's version is identical:
+`legal-ru/docs/BRIEF.md`, `patent-ru/README.md` ("Тестирование"),
+`gost-ed-mashiny/README.md` ("Тестирование"), `arbitrazh-ru/docs/BRIEF.md`
+and `docs/dispatch-history.md`. `arbitrazh-ru`'s second pass is worth noting
+specifically: its first RED-GREEN test was self-graded inside one dispatch,
+and was re-run as two genuinely independent subagents once that was
+recognized as weaker evidence than the other plugins' tests — a real example
+of not trusting a skill's own first self-report, the same discipline this
+family's reviews apply to sessions.
+
+## 8. What this document is for
 
 This is **style guidance for whoever adds the next plugin to this
 family** — not a schema to validate against, and not code to import. There
