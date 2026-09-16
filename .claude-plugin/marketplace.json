@@ -18,7 +18,7 @@
       "source": {
         "source": "url",
         "url": "https://github.com/serjdrej/arbitrazh-ru.git",
-        "ref": "80b0648d6c5e98ad1ea59faa20605e5101f55541"
+        "ref": "f218071b9a4a400157e32784adf4f35820d23d90"
       },
       "homepage": "https://github.com/serjdrej/arbitrazh-ru"
     },
@@ -48,7 +48,7 @@
       "source": {
         "source": "url",
         "url": "https://github.com/serjdrej/legal-ru.git",
-        "ref": "f18345d09f199e9c467b4f7a295959583dd16077"
+        "ref": "45f8d956d4faa0593420d53c70277ea497c9fc32"
       },
       "homepage": "https://github.com/serjdrej/legal-ru"
     },
