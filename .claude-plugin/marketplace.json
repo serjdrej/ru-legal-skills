@@ -18,7 +18,7 @@
       "source": {
         "source": "url",
         "url": "https://github.com/serjdrej/arbitrazh-ru.git",
-        "ref": "647bdbfe42c58b692eaf1870f8b557544f04be12"
+        "ref": "6d516d8bd81eab182b39c9dab32879ed1bcfb428"
       },
       "homepage": "https://github.com/serjdrej/arbitrazh-ru"
     },
@@ -48,7 +48,7 @@
       "source": {
         "source": "url",
         "url": "https://github.com/serjdrej/legal-ru.git",
-        "ref": "45f8d956d4faa0593420d53c70277ea497c9fc32"
+        "ref": "4a053346ae3ce8429997193daf49f7e788a36e31"
       },
       "homepage": "https://github.com/serjdrej/legal-ru"
     },
@@ -63,7 +63,7 @@
       "source": {
         "source": "url",
         "url": "https://github.com/serjdrej/patent-ru.git",
-        "ref": "ef9f502ccbc9d3537979537e48c37eb550f3dd43"
+        "ref": "928e78454311dd985cd9c9d59e6a175354f0083d"
       },
       "homepage": "https://github.com/serjdrej/patent-ru"
     }
