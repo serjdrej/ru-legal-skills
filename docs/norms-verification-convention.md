@@ -515,6 +515,18 @@ neighbour while the second makes it look structural. Show both **where they
 diverge in meaning** — not always, or every figure acquires a companion and
 the reader stops noticing the cases where the divergence is the point.
 
+**When two counts of the same thing disagree, reconcile the method, not the
+total — and agreeing shares with disagreeing absolutes are the signature of
+different denominators rather than of error.** Three sessions counted one
+resource listing on 2026-09-19 and got 7 914, 7 673 and 6 383 bytes, with
+the `docs/` share at 62 %, 63 % and 63 %. Nobody was wrong: the JSON entry
+was estimated in three shapes, the file count differed by 97 against 102,
+and one of the three counted the tree **after** import, already without
+dot-paths. Chasing the absolutes would have found a defect that was not
+there; comparing the method found three different questions being answered.
+The practical form: publish the denominator with the number, and when
+someone's total differs, ask what they counted before asking who is wrong.
+
 **A figure carries its domain or it will be read as universal — and an
 observation taken from the extreme case is the commonest way to lose it.**
 Mine, 2026-09-19, an hour after writing the rule below. Reading a tool's
