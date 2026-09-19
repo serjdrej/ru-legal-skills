@@ -427,11 +427,20 @@ else's finding for yours you can eventually catch; your own finding going
 anonymous downstream you cannot, because nothing anywhere is now wrong — it is
 merely unattributable.
 
-**Portability caveat, stated rather than discovered later:** none of the four
-linters has been run in `legal-ru`, `patent-ru` or `gost-ed-mashiny`. This
-section enters the convention on the same footing §7 had *before* each plugin
-ran its own pass — as a principle worth adopting, not as a demonstrated
-cross-plugin fact.
+**Portability, measured rather than assumed (updated 2026-09-19).** One of
+the four linters is now confirmed portable by live run: `router_lint.py`
+against `legal-ru` returns `unreachable_references: []` and
+`missing_scripts: []` — run by that plugin's own session and re-run here
+independently. It also reads its siblings for comparison and reports
+`gost-ed-mashiny` as having no routing-table line, which is a true
+description of a different document shape rather than a finding against it.
+The other three were **not applicable rather than failing**, and the
+distinction is the point: `proof_list_lint.py`, `stage_map_verify.py` and
+`claims_scan.py` expect artefacts of one plugin's domain — a proof list, a
+stage map, a case journal with a source table — which `legal-ru` does not
+have in that shape. "Nothing to apply it to" is not evidence either way, and
+reporting it as a pass would have been the false positive this whole section
+exists to prevent.
 
 ## 9. Mechanical or judgmental — the class decides what a skill may assert
 
@@ -527,7 +536,51 @@ what breaks for a skill that ignores it.
   file can cost more than the section did inline. One measurement on one
   skill; possibly more important than the ceiling above.
 
-## 12. What this document is for
+## 12. An article number without the code of the act is not a reference
+
+*(From `arbitrazh-ru` — occasioned by its lead, measured and brought by the
+`growth-research` lane, 2026-09-19. Answers the "what breaks" filter more
+sharply than anything else in this document: three years against one month.)*
+
+**A reference to an article always carries the code it belongs to**, in prose
+and in machine markup alike. «Ст. 321» is not a reference; it is a defect
+waiting for a reader.
+
+Three collisions in one corpus, all inside three days:
+
+- **Ст. 321.** In АПК it is the three-year window for presenting a writ of
+  execution — measured live, `ips_lookup.py text 102079219 --article 321`,
+  2026-09-19. In ГПК it is the one-month window for an appeal — taken from
+  `arbitrazh-ru`'s own ГПК registry, which marks that entry as an unverified
+  paraphrase, so half of this collision rests on a registry entry and not on
+  the code. Recorded that way rather than smoothed, per §8.
+- **Ст. 131.** Form and content of a claim in ГПК; response to a claim in
+  АПК. A search for the bare number returned three hits that were about to be
+  counted as coverage of the response topic. All three were ГПК.
+- **Ст. 303 and 306.** They sit inside a file about АПК evidence among two
+  dozen АПК articles and belong to **УК РФ** — confirmed here,
+  `references/evidence-gathering.md` lines 252–253. A verifier holding one
+  act constant would resolve them to АПК and **report success on the wrong
+  text**.
+
+**What breaks without it.** The skill ships a deadline wrong by three years
+against one month, and the error *looks like a citation*, so it survives
+every check of form. In a corpus where АПК, ГПК, ГК, НК and УК coexist this
+is the expected case, not the rare one: a bare number resolves to the code
+the reader was already thinking about, not the code the norm came from.
+
+**And it corrupts self-measurement, not only citation.** Twice in three days
+a non-zero count on a bare number was read as "this topic is covered" while
+the hits belonged to another code. A skill measuring its own coverage by bare
+numbers measures someone else's.
+
+Write the rule to cover both carriers. The same requirement was already
+mandatory in one plugin's verifier markup — act code, no defaulting to АПК —
+on the strength of the УК case alone; that it now also holds for prose is the
+evidence that it is one rule with two carriers rather than a detail of one
+mechanism.
+
+## 13. What this document is for
 
 This is **style guidance for whoever adds the next plugin to this
 family** — not a schema to validate against, and not code to import. There
