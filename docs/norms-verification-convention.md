@@ -211,15 +211,37 @@ consulted, splitting the gap into two cases:
    memory — then hand back the finding under a status tier deliberately
    weaker than a normal registry entry: **AD HOC** — found live on a date,
    not in any registry, not reviewed. **AD HOC has two sub-shapes and they
-   must not be conflated:** a search that only confirms an act's
-   existence/route/status (`legal-ru`'s `by-title`, `gost-ed-mashiny`'s
-   `status`) still leaves any specific figure — a percentage, a fee, a day
-   count — as unverified training-data recall; a search that actually reads
-   the source text (`patent-ru`'s live rospatent.gov.ru read of ст.1363,
-   which returned a verbatim fee line) can label that figure itself as
-   live-confirmed. State explicitly which sub-shape applies — the RED-GREEN
-   passes below exist specifically because this distinction was missing from
-   the first draft in every one of the three plugins that copied the idea.
+   must not be conflated. Since the ips_lookup wave of 2026-09-15..18 the
+   line between them runs between *scripts*, not between plugins** — name
+   the script that produced the finding, never "a live search":
+
+   | Script | Establishes | Never establishes |
+   |---|---|---|
+   | `pravo_lookup.py` (publication records, publication.pravo.gov.ru) | that an act exists, is in force, and which amendments were published | the text of any article — its own docstring says so, and the word `article` does not occur anywhere in it |
+   | `ips_lookup.py` (ИПС «Законодательство России») | the consolidated text of an article **for one named redaction** | that the redaction returned is the one in force |
+   | `gost_lookup.py status` (rst.gov.ru) | a standard's bibliographic status | anything about the standard's content |
+
+   A finding from a publication-record or status lookup still leaves every
+   specific figure — a percentage, a fee, a day count — as unverified
+   training-data recall. Only a finding whose **text was actually read** may
+   label that figure live-confirmed, and then only if it records *which
+   redaction was read* (`nd` and `rdk`): a ✅ without them is worse than an
+   honest paraphrase, because it reads as verified and goes stale silently
+   the next time the redaction changes.
+
+   `ips_lookup.py` is carried by `legal-ru`, `patent-ru` and `arbitrazh-ru`;
+   `gost-ed-mashiny` deliberately does not carry it and records why — ГОСТы
+   and ТР ТС are not in that system at all, confirmed by a zero-match check.
+
+   *(Corrected 2026-09-19. The previous wording cited `legal-ru`'s `by-title`
+   as the canonical "confirms existence, never returns text" case and was
+   falsified by the wave above. It erred in the dangerous direction: it told
+   a reader that a figure obtained through that plugin is always recall, when
+   the plugin can now read the article. The first attempt at this correction
+   erred in the mirror direction — "a live search now returns text" — and was
+   caught by `arbitrazh-ru` before it was written: `pravo_lookup` and
+   `ips_lookup` are both "a live search" and only one of them returns text.
+   Hence the rule above is stated per script.)*
 2. **Out of scope entirely** — another jurisdiction, court practice/agency
    letters where the plugin's script cannot read practice (only acts), or a
    subject area the plugin explicitly excludes. The script cannot help here.
