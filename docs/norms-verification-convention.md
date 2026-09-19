@@ -407,7 +407,16 @@ figures as its own finding, and the mis-attribution reached this document.
 shape as a ✅ without its redaction identifiers in §7, arrived at from the
 opposite direction. A measured value in a field carries the measuring lane and
 the date, or it carries the command that reproduces it — **and the second
-branch is the primary one, not the fallback.** A date cannot always be
+branch is the primary one, not the fallback.**
+
+*A figure anchored to an event does not rot; a figure stated as "currently"
+begins rotting at once.* `patent-ru` made the split deliberately on
+2026-09-19 and it is worth copying: its `SKILL.md` keeps «87 of 148 lines»
+explicitly as *the state at the moment this rule was written* — an argument
+about a past event, which stays true — while the present pair, 91 of 169,
+lives in the README with a date, where describing the present is the job.
+The same number in the wrong place would have been false within the hour:
+adding the rule itself changed both figures. A date cannot always be
 recovered: `MORPHOLOGY_NOTE`'s figures sit in a measurements file with no
 date, and the constant's first appearance in history, 2026-09-16, is when it
 was committed rather than when it was measured. Back-filling that date would

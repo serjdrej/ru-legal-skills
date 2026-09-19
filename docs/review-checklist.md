@@ -145,7 +145,18 @@ hypothetical — see the note after each one.
       *(Hit twice this session: "Author identity unknown," both times on a
       repo's very first commit.)*
 
-## After ANY commit to a plugin repo — sync the marketplace
+## After any **push** to a plugin repo — sync the marketplace
+
+*(Trigger corrected 2026-09-19. This section said "after any commit" for
+nine days and that is the wrong event: a pin is stale relative to what is
+**published**, not to what exists in somebody's working copy. `patent-ru`
+made the distinction while declining to push — its commit sat on a worktree
+branch, `ls-remote` still showed the previous head, and the pin was
+therefore **correct**, not stale. The reflex "I committed, so the pin is
+stale" would have pointed the marketplace at a SHA nobody can fetch. That
+did not happen today only because the sync script compares against
+`ls-remote` rather than against a local ref — a mechanical check covering
+for a wrong rule, which is the argument for having the check.)*
 
 `ru-legal-skills/.claude-plugin/marketplace.json` pins each plugin to an
 exact commit sha via `source.ref`. **A commit to `legal-ru`, `patent-ru`, or
