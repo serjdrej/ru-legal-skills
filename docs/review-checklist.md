@@ -128,7 +128,14 @@ hypothetical — see the note after each one.
       carelessness twice — it is a property: four of this family's six
       repositories are public, so "public" is the default assumption, and
       it is wrong exactly when it matters, which is while someone is
-      sizing a leak.)*
+      sizing a leak. **Third instance the same day, and mine:** I relayed a
+      consequence premised on a repository being installable by the public
+      — 1.66 MB of development history reaching "whoever installs the
+      plugin" — without running the command, hours after writing this very
+      item. `arbitrazh-ru` is private. The consequence is not void, but it
+      is a future risk if the repo is ever opened, not an active harm, and
+      those are argued differently. Checked all four afterwards: three
+      public, one private.)*
 - [ ] **A watchdog script is not a watchdog until something invokes it.**
       Before writing one, name what will trigger it. *(2026-09-19: the
       importing project has had a working upstream-drift checker since

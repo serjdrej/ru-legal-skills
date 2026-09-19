@@ -539,6 +539,15 @@ there; comparing the method found three different questions being answered.
 The practical form: publish the denominator with the number, and when
 someone's total differs, ask what they counted before asking who is wrong.
 
+**And the signature only helps if someone looks at it.** The three
+denominators diverged because the contested element — the shape of one
+listing entry — **was never named aloud by anyone before the comparison**,
+and the agreement in shares *concealed* that rather than revealing it:
+three people saw 62–63 % and each took it as confirmation. So the rule
+above is the recovery, not the prevention. The prevention is the same one
+as for a shared premise: **name the unit before counting**, not after the
+totals disagree.
+
 **A figure carries its domain or it will be read as universal — and an
 observation taken from the extreme case is the commonest way to lose it.**
 Mine, 2026-09-19, an hour after writing the rule below. Reading a tool's
