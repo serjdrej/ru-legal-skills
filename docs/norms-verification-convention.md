@@ -523,7 +523,19 @@ listing, and the listing showed it — from which it concluded the protection
 does not work. The experiment was correctly run and the conclusion was
 false: the importer refuses any leading-dot path component on copy, so that
 state never occurs in the pipeline. Checked independently here — **zero
-dot-paths across all 70 imported skills.**
+dot-paths across all 70 imported skills** — and then settled properly by
+the skill's own session with the experiment both of us had skipped: a
+fixture with three directories run through the real importer into staging,
+where `docsX/` arrived and `.dev/` did not.
+
+**That pair is the point, and it is what my check lacked.** Zero dot-paths
+in the library is consistent with "the importer refuses them" *and* with
+"nothing ever had one"; and a filter shown only to drop something has not
+been shown to be the filter you think — it might drop anything unfamiliar.
+The admitted case is what proves the criterion is *leading dot* rather than
+a guess at "looks like a service directory". **A filter needs a case it
+refuses and a case it admits**, exactly as a detector needs a positive
+control before its zero means anything.
 
 What survived is worth as much as the alarm was worth nothing: the listing
 function really does *not* filter leading dots (`catalog.resources()` skips
