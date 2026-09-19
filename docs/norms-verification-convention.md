@@ -435,6 +435,25 @@ else's finding for yours you can eventually catch; your own finding going
 anonymous downstream you cannot, because nothing anywhere is now wrong — it is
 merely unattributable.
 
+**A number that arrives by retelling is documented by a reference to a
+record, not to whoever said it.** "The lane measured it" is not provenance
+even when the lane is right and the measurement was real. This is a distinct
+failure from the substitutions elsewhere in this document, and the more
+dangerous one: a substituted figure is caught by recomputing it, while a
+transported figure is *correct* and caught by nothing except the question
+"where is this written down?" — which nobody asks, because each retelling
+makes the number look sturdier for having a new mouth behind it. Three
+retellings put two percentages into §11 of this document that exist in no
+file anywhere; see the correction there.
+
+*A corollary about presenting figures, from the same exchange.* A quantity
+chosen to suit a conclusion **does not thereby become false**, so no check
+for correctness will catch it: 6 927 bytes and 39 % of the body are both true
+of the same section, and the first makes it look negligible next to a
+neighbour while the second makes it look structural. Show both **where they
+diverge in meaning** — not always, or every figure acquires a companion and
+the reader stops noticing the cases where the divergence is the point.
+
 **Portability, measured rather than assumed (updated 2026-09-19).** One of
 the four linters is now confirmed portable by live run: `router_lint.py`
 against `legal-ru` returns `unreachable_references: []` and
@@ -549,13 +568,26 @@ what breaks for a skill that ignores it.
   The "43 KB" traces to a body size in `lazy-skill-library`'s own eval; the
   percentages do not trace anywhere.
 
-  What is reproducible, from that eval: the other three plugins' bodies run
-  19.2–19.7 KB, which sits against a measured point of 20 063 B where
-  section-wise delivery won in all five runs. So the comfortable reading —
-  "the neighbours are small, progressive disclosure is not their problem" —
-  is **not** supported by figures either. Both sides of this question are now
-  honestly unmeasured, which is why it stays here rather than becoming a
-  rule, and the reason is different from what this entry claimed yesterday.
+  **Second correction, same day, to the correction above.** It closed by
+  calling both sides "honestly unmeasured". That is also wrong, and the
+  difference is practical. The measurement *was* made — a shim over 21 runs
+  and seven tasks with the model named, per the lane that ran it. Its harness
+  is on disk and was checked here: `lazy-skill-library/docs/reviews/`
+  `2026-09-18-outline/eval/` holds `lazy.py`, `grade.py`, `evals.json` and 34
+  shim logs. What never happened is the **recording of the result**: the
+  figure travelled from the lane's context into a message, into a letter, into
+  this section, and did not land in a file at any step. (`results.json` there
+  holds the eval's 33 answers, not the route costs.)
+
+  **Unmeasured must be measured; unrecorded must be retrieved** — and this is
+  the second. The entry stays open until the number comes back out of those
+  logs with the command beside it, not because anyone needs to run anything
+  again.
+
+  What is independently reproducible meanwhile: the other three plugins'
+  bodies run 19.2–19.7 KB against a measured 20 063 B point where
+  section-wise delivery won all five runs — which cuts against the
+  comfortable reading that the neighbours are too small for this to matter.
 - **Whether a caveat comes out good because it could not be fixed.** The
   exemplar in §8 was written where the defect was unfixable — the source
   does not report whether an entity is in liquidation, so the lane could not
