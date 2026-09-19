@@ -534,11 +534,28 @@ what breaks for a skill that ignores it.
   than a rule, and that is how it stands. Holding the filter against a rule
   that sounds right is the reason the filter exists.
 - **A ceiling on `SKILL.md` size.** `arbitrazh-ru` holds one near 100 lines
-  on the reasoning that its file grew past 498 and carried three
-  self-contradictions in a day. A neighbouring lane measured the opposite
-  quantity: at 43 KB its routes cost 70% less than a full read, and the
-  planned cut makes the same route 83% dearer. The reasoning is plausible and
-  the bytes are measured; they disagree, so neither becomes a rule.
+  on the reasoning that its file grew past 498 lines and carried three
+  self-contradictions in a day.
+
+  **Correction, 2026-09-19, and it is this document's own §8 defect.** The
+  entry used to say a neighbouring lane had measured the opposite quantity —
+  "at 43 KB its routes cost 70% less than a full read, and the planned cut
+  makes the same route 83% dearer" — and set that against the reasoning as
+  though both sides were measured. Those two percentages are **not
+  reproducible**: a search across all six repositories finds them in this
+  file and in a draft quoting this file, nowhere else. I wrote them here from
+  a report, without the command, the date or the corpus — exactly what §8
+  forbids, in the section that demands it, about a figure I did not measure.
+  The "43 KB" traces to a body size in `lazy-skill-library`'s own eval; the
+  percentages do not trace anywhere.
+
+  What is reproducible, from that eval: the other three plugins' bodies run
+  19.2–19.7 KB, which sits against a measured point of 20 063 B where
+  section-wise delivery won in all five runs. So the comfortable reading —
+  "the neighbours are small, progressive disclosure is not their problem" —
+  is **not** supported by figures either. Both sides of this question are now
+  honestly unmeasured, which is why it stays here rather than becoming a
+  rule, and the reason is different from what this entry claimed yesterday.
 - **Whether a caveat comes out good because it could not be fixed.** The
   exemplar in §8 was written where the defect was unfixable — the source
   does not report whether an entity is in liquidation, so the lane could not
