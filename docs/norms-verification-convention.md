@@ -341,7 +341,9 @@ author** — which is the point: the author reads the name as the intent.
 the absence of a norm, and gets quoted as a conclusion. This is **one of two**
 defect classes known in this family that neither a test run nor a file
 comparison catches: the right answer and the wrong answer look identical.
-The other, recorded in `arbitrazh-ru/docs/BRANCH-proof-elements.md`, is a
+The other — recorded twice, in `arbitrazh-ru/docs/BRANCH-proof-elements.md`
+for the property and in that repository's `docs/dispatch-history.md` for the
+three cases, the narrowing, and why the debt is deliberately left open — is a
 file's statement *about nearby code* outliving a change to that code —
 file-against-file comparison is blind to it by construction, because each
 file is internally consistent and what lies is the link to a third. Stated
@@ -378,6 +380,19 @@ scan whose regex class `[^.]` excluded full stops, i.e. excluded the very
 dates it was scanning for. A zero looks identical whether it is true or the
 instrument is broken — which is what makes it the worst of the negative
 results.
+
+**Two further ways to manufacture a false zero, both committed within the
+hour by the two people writing this very section.** *Truncated output:*
+`grep -rn … | head -5` over nineteen matches, reported as "the only record
+in the whole directory" — a truncation is indistinguishable from a real
+zero and cheaper to cause than a wrong query, so `head`, `-m` and a tool's
+own output limit belong in the same warning as the wrong query form.
+*Language:* in a bilingual repository a pattern written in one language
+returns a confident zero over a passage written in the other; this
+document's editor did it twice in one day, searching Russian for entries
+that turned out to be in English. Neither failure feels like a failure:
+both return promptly, and one of them returns exactly the line that
+confirms what you expected.
 
 **Portability caveat, stated rather than discovered later:** none of the four
 linters has been run in `legal-ru`, `patent-ru` or `gost-ed-mashiny`. This

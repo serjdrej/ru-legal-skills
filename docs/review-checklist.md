@@ -117,7 +117,10 @@ hypothetical — see the note after each one.
       matters lives as a loose file or inside a cache; walk the filesystem,
       excluding `.venv` and `__pycache__`, on the grounds that the
       last one to look before publishing to two mirrors is cheaper than one
-      missed look.)*
+      missed look. Stated as a wrong way and a right way rather than as
+      anyone's credit, because the rule has to work for a reader who knows
+      none of the people involved: **`git grep` returns zero on the very
+      tree where a filesystem walk finds three copies.**)*
 - [ ] **State a repository's visibility only after `gh repo view <repo>
       --json isPrivate`, never from memory.** *(2026-09-19: two independent
       sessions each told the owner "public repository" about the same
