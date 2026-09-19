@@ -103,6 +103,18 @@ hypothetical — see the note after each one.
       habit: `git push github HEAD:master`, typed because that was the
       evening's pattern in a different repository, without looking at what
       remotes this one has.)*
+- [ ] **A fix at the tip does not remove the content from other lanes'
+      working copies.** After scrubbing anything sensitive, remember that a
+      lane whose branch was merged *before* the fix still holds the old
+      lines in its checkout — and in its caches. *(2026-09-19: after the
+      leak above was fixed at both tips, both offending versions were still
+      live in a neighbouring lane's worktree, with a third copy in its
+      `.ruff_cache`. A merge will not bring them back, since master is
+      ahead; a pass that copies or commits the file wholesale will. The
+      importing project's answer, worth copying: scan the tree for the
+      login and both UUIDs **before every merge**, on the grounds that the
+      last one to look before publishing to two mirrors is cheaper than one
+      missed look.)*
 - [ ] `git config user.name`/`user.email` set **locally in that repo**
       before the first commit — global config is not set on this machine.
       *(Hit twice this session: "Author identity unknown," both times on a
