@@ -472,13 +472,31 @@ someone else in another — both messages honest, both from the same author,
 divergent only because the recipients differed. The strict form is *the
 qualifier reaches everyone who received the figure*, which requires
 remembering who that was; its author says plainly he keeps no such ledger
-and does not know how to. Nobody does. **The answer is not a ledger: it is
-that the figure's record carries its current status**, so that anyone
+and does not know how to. Nobody can: recipients retell, and the second ring
+of them is unknown to the sender by construction.
+
+The rule therefore has two halves, and neither covers the other.
+
+**Storage — the figure's record carries its current status**, so that anyone
 following the reference sees the downgrade whether or not they were on the
-original distribution. Which is the argument for reference-over-retelling a
-second time and for a different reason — the first was that a retold number
-cannot be re-checked, this one is that a retold number cannot be
-*corrected*.
+original distribution, or existed at the time. This is the argument for
+reference-over-retelling a second time and on different grounds: the first
+was that a retold number cannot be re-checked, this is that a retold number
+cannot be **corrected**, and the second is the stronger, because a re-check
+can be done later and alone while a correction requires reaching a set of
+people that is not defined.
+
+**Sending — a figure goes out only with the reference beside it.** No
+recipient ledger is kept, because none is possible; what is owed at send
+time is the one gesture that is: never send a bare number. An earlier draft
+of this paragraph said the sending side cannot close the gap and should not
+try, which is too strong and in the harmful direction — a reader hears that
+nothing is owed. Exactly one thing is, and it is checkable in a second
+before sending (is the reference in this message, yes or no?), unlike
+"might this caveat go stale for someone I will never write to". The case
+that produced this whole section is the proof: the logs were already
+committed, by the sender, hours before he sent the bare figure. What was
+missing was not a ledger. It was one line saying where to look.
 
 *A corollary about presenting figures, from the same exchange.* A quantity
 chosen to suit a conclusion **does not thereby become false**, so no check
