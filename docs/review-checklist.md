@@ -89,7 +89,20 @@ hypothetical — see the note after each one.
       not "check paths": that is a consequence. The cause is that rescuing
       material did not feel like publishing, and the read-before-publish
       rule was never mentally applied to it. The artefact being someone
-      else's is exactly why it went unread.)*
+      else's is exactly why it went unread — your own text you read while
+      writing it, so the rule fires precisely where you least expect to
+      need it.)*
+- [ ] **In a repository with more than one remote, "pushed" is not a state
+      but a question of *where*.** Check `git for-each-ref refs/remotes`
+      rather than remembering. *(2026-09-19: a leak fix was pushed to the
+      GitHub mirror and not to the NAS `origin` this project treats as
+      primary, leaving both offending files live in the tip of the primary
+      remote while the author believed the matter closed. The cause was not
+      the known key problem — `core.sshCommand` has been in `.git/config`
+      since 8 September and plain `git push origin` worked first try — but
+      habit: `git push github HEAD:master`, typed because that was the
+      evening's pattern in a different repository, without looking at what
+      remotes this one has.)*
 - [ ] `git config user.name`/`user.email` set **locally in that repo**
       before the first commit — global config is not set on this machine.
       *(Hit twice this session: "Author identity unknown," both times on a
