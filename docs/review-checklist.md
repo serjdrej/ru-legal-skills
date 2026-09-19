@@ -68,7 +68,28 @@ hypothetical — see the note after each one.
 - [ ] No dot-prefixed path, no `hooks/`/`commands/`/`agents/` directory
       anywhere (breaks import into skill-library tooling that scans a
       plugin's tree, such as the one this family's own skills have been
-      imported into).
+      imported into). *(Precision added 2026-09-19, from the importing
+      project's own report: its rule refuses any leading-dot path without
+      exception, which is why `gost-ed-mashiny` can be **read** from that
+      library but not **installed** from it — its `.claude-plugin/` is
+      dropped on import. So the item is not "never have a dot path": a
+      plugin needs `.claude-plugin/`. It is "know that a dot path does not
+      survive import, and take the plugin from its own repository when you
+      need to install it." `patent-ru/.secrets/` and
+      `gost-ed-mashiny/.claude-plugin/` are both correct as they stand.)*
+- [ ] **Anything moved into a repository from a scratch or temp directory
+      has been read in full by whoever moved it** — saving someone else's
+      work is a publication and obeys the rules of one. *(2026-09-19:
+      review probes were moved wholesale out of a scratchpad to keep the
+      harness from dying with the session, and were not read first. They
+      carried the owner's login, and — a step worse than the leak class
+      this family already rewrote two histories for — his account and
+      organisation UUIDs. Caught the same day by the session that did it,
+      after an unrelated warning about a path in a message. The cause is
+      not "check paths": that is a consequence. The cause is that rescuing
+      material did not feel like publishing, and the read-before-publish
+      rule was never mentally applied to it. The artefact being someone
+      else's is exactly why it went unread.)*
 - [ ] `git config user.name`/`user.email` set **locally in that repo**
       before the first commit — global config is not set on this machine.
       *(Hit twice this session: "Author identity unknown," both times on a

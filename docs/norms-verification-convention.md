@@ -358,13 +358,121 @@ documentation** — if the linter compares the phrase but not the part number,
 the output says so, or the reader completes the picture himself, in the
 dangerous direction.
 
+**A zero is a property of the instrument.** The sharpest special case, and
+the reason this principle is worth a section rather than a sentence: a
+negative result is never stronger than the query that produced it, so
+"not found" is recorded together with **the form of the query and its
+reach**, and a zero after a single query form is not a finding. Measured by
+the `growth-research` lane: `vsrf.ru` search is lexical and case form halves
+or doubles the hit count — «неустойка» 20, «неустойки» 37, «неустойку» 8;
+its own conclusion "обзоры never carry full text" came from one query and
+was refuted by the second; and a neighbouring lane got a clean zero from a
+scan whose regex class `[^.]` excluded full stops, i.e. excluded the very
+dates it was scanning for. A zero looks identical whether it is true or the
+instrument is broken — which is what makes it the worst of the negative
+results.
+
 **Portability caveat, stated rather than discovered later:** none of the four
 linters has been run in `legal-ru`, `patent-ru` or `gost-ed-mashiny`. This
 section enters the convention on the same footing §7 had *before* each plugin
 ran its own pass — as a principle worth adopting, not as a demonstrated
 cross-plugin fact.
 
-## 9. What this document is for
+## 9. Mechanical or judgmental — the class decides what a skill may assert
+
+*(From the `growth-research` lane of `arbitrazh-ru`, 2026-09-19. The
+priority candidate, because the costliest measured defect in this project is
+a wrong strategic recommendation carrying impeccable sources, and nothing
+else in this document catches it.)*
+
+**A claim is mechanical only if both hold:** (a) a source is named next to it
+that settles it **without knowing the facts of the case**; and (b) it is
+phrased **descriptively, not predictively** — "the norm requires X, X is
+absent from the text", never "the court will refuse" or "the chances are
+poor". **Checkability by itself says nothing about the class.**
+
+**Why (a) is not "checkable ⇒ mechanical".** A counterexample, measured: the
+check "the ходатайство under ч.4 ст.66 АПК does not name the evidence's
+identifying details" is refuted by opening the article — a minute's work,
+cheap and certain — and *simultaneously contradicts* п.38 ПП ВС РФ от
+23.12.2021 № 46, which the lane reports as saying that naming those details
+«не требуется» (verified there against the 26-page PDF; **not re-verified in
+this repository**). One counterexample is logically enough to kill a
+universal rule, which is why n=1 carries here although n=1 would not
+establish a positive claim elsewhere in this document.
+
+**Condition (b) rests on reasoning, not measurement** — the lane says so
+itself. No run separates the harm of the predictive mood from the harm of
+the advice it carries.
+
+**What breaks without it.** A skill ships a check that is cheap, confident,
+contrary to binding guidance — and **reports success**.
+
+**Why it survives a moving boundary.** The criterion is pinned to *whether a
+source exists*, not to the type of claim. When «отменён в части» acquired a
+machine source (`scope: partial`), the claim changed class by itself and the
+rule needed no edit. Test any reformulation against that: if it needs
+rewriting when a new source appears, it is the wrong formulation.
+
+## 10. One claim, one carrier — and a caveat that names its own deletion
+
+**One claim lives in one place.** When a claim becomes machine-readable — an
+output field, a marker, a test — the prose copy is **deleted**, not left
+alongside. Copies drift; the check goes green on the machine copy while the
+reader believes the prose one; and **a file-against-file comparison never
+finds this**, because the contradiction is inside one file, which is
+consistent with itself by definition.
+
+*Evidence, and an instructive complication.* The lane's flagship example was
+a registry file that told the reader to verify the text "here and now" on one
+line and stated that no entry had been verified on another. Checked here on
+2026-09-19: **it no longer reproduces** — `arbitrazh-ru` repaired it in
+`503d775`, and every entry now carries ✅ with its `nd`. The principle stands
+on the other cases (the lead reports three in one day), and the staleness of
+the example is not a refutation but an illustration: a report about drifting
+copies drifted while in flight.
+
+**Where a new caveat goes — three tiers, and the third owes an
+explanation.** (1) A field in a script's output: it travels with the data and
+a regression test covers it. (2) A file the route forces open. (3) The
+skill's root file. Choosing (3) requires **naming why (1) and (2) would not
+do**. Measured in one day: a caveat living in a field was caught by a test,
+while a caveat living in prose became false and was caught by nothing.
+
+**The rule worth more than the tiers: a caveat should name the condition
+under which it is deleted.** The `--article` caveat is the first in this
+family ever *removed* rather than accumulated — it stated what would make it
+unnecessary, that thing happened, and it went (ten lines to four in
+`arbitrazh-ru`, nine to five in `patent-ru`). Without this, caveats only ever
+accumulate, because no carrier has a deletion event, and the root file turns
+into a graveyard of sentences that were once true.
+
+## 11. Open questions — proposed, not adopted
+
+Recorded so they are not re-proposed from scratch, and explicitly **not
+rules**. Each failed the same filter every section above had to pass: name
+what breaks for a skill that ignores it.
+
+- **A prohibition with no executable alternative breeds lies.** Before
+  forbidding an action, name what to do instead. Proposed by the
+  `growth-research` lane on one case — a flat "never install packages
+  yourself" that the owner corrected, since explicit human consent in the
+  current dialogue does cover one install; the flat ban would have made
+  honest behaviour a violation. The lane proposed it as a question rather
+  than a rule, and that is how it stands. Holding the filter against a rule
+  that sounds right is the reason the filter exists.
+- **A ceiling on `SKILL.md` size.** `arbitrazh-ru` holds one near 100 lines
+  on the reasoning that its file grew past 498 and carried three
+  self-contradictions in a day. A neighbouring lane measured the opposite
+  quantity: at 43 KB its routes cost 70% less than a full read, and the
+  planned cut makes the same route 83% dearer. The reasoning is plausible and
+  the bytes are measured; they disagree, so neither becomes a rule.
+- **Granularity of extraction.** `read_skill_resource` cannot address a
+  section — a resource is read whole — so moving a section out as one large
+  file can cost more than the section did inline. One measurement on one
+  skill; possibly more important than the ceiling above.
+
+## 12. What this document is for
 
 This is **style guidance for whoever adds the next plugin to this
 family** — not a schema to validate against, and not code to import. There
