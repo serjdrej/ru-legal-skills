@@ -86,6 +86,35 @@ it and reports false compliance. Counting compliance mechanically fails in the
 opposite direction from counting violations mechanically: the first
 under-reports, the second over-reports.
 
+## Trap 4 — the raw hits include the skill talking about itself
+
+Found 2026-09-19 by `patent-ru` while running this method. Its first pass
+looked like a clean zero and was wrong in the *other* direction from traps 1-3:
+nearly every raw hit was **meta-discussion** — editing the norms registry,
+reviewing a sibling skill, testing another skill's tool on citation-shaped
+examples — rather than real end-use. A second false-positive class sat inside
+the real work: in a patent text most «п. NN» are claim-point cross-references
+(«п. 33 первоначальной формулы»), not citations of an act, and only count when
+a legal-act keyword stands nearby.
+
+So the count of raw matches is an upper bound here too, and for a reason the
+earlier traps do not cover: **a corpus of agent transcripts contains the skill
+being discussed, maintained and tested, not only used.** Separate use from
+talk about use before counting anything.
+
+## The method's own blind spot, stated because it was hit
+
+Detecting "the skill was in play" by a formal invocation is not enough: an
+11-day-old skill produced exactly one `Skill:` invocation across 502
+transcripts. Broadening to reference-file reads was still not enough — a real
+2026-09-18 session went straight to running the skill's script without
+re-reading any `.md`. Broaden to direct script invocation as well.
+
+Even then: **a session that reuses skill content already loaded in its context,
+without a fresh read or invocation, stays invisible to this approach
+entirely.** No widening fixes that. Report the measurement as covering
+detectable use, not all use.
+
 ## Why this belongs in the marketplace docs
 
 The measurement is cheaper than the build in every case where it applies, and
