@@ -515,6 +515,24 @@ neighbour while the second makes it look structural. Show both **where they
 diverge in meaning** — not always, or every figure acquires a companion and
 the reader stops noticing the cases where the divergence is the point.
 
+**Two independent counts are not independent if they share a premise, and
+agreement between them is worth nothing.** Twice on 2026-09-19: a figure
+«resources are 80 % of the library» was computed separately by two sessions
+who then confirmed each other — the counts were genuinely independent, the
+premise was not, since both counted `docs/` (lane journals, dispatch
+history, old spec revisions) as resources although no route leads there.
+The true share of `references/` against `SKILL.md` is 59 %. Earlier the same
+day two other sessions independently told the owner a private repository was
+public, in the same direction, for the same structural reason — four of six
+repositories here are public, so "public" is the resting premise.
+
+This is the failure mode that survives the discipline the rest of this
+document is built on: running your own command does not help when your
+command encodes the same wrong premise. **What catches it is stating the
+premise out loud, not repeating the measurement** — "I am counting X as a
+resource", "I am assuming this repo is public" — because agreement is then
+visibly agreement about the premise rather than about the world.
+
 *Second instance, and it is mine, committed the day this corollary was
 written.* Recommending the editing rule to three plugins, I ranked their
 cases by growth ratio and told `patent-ru` its case was the weakest of the
