@@ -140,6 +140,34 @@ hypothetical — see the note after each one.
       gap is not in the code and not in the intent: nothing calls it. A
       trigger tied to an action that already happens beats a schedule
       nobody installs.)*
+- [ ] **Before moving anything out of what ships, grep what ships for
+      references to it** — `git grep -l "<dir>/" -- SKILL.md references/
+      scripts/`. *(2026-09-19: the plan was to move a skill's `docs/` out of
+      the agent-facing tree as development clutter. Eight shipped files
+      reference it, one procedure file eight times, and a script names a
+      spec there as its own. Moving them to a dot-path would have been
+      **worse than leaving them**: today the file is present and readable in
+      the imported copy, and after the move the reference resolves to
+      nothing, because the importer drops leading-dot paths. The right split
+      is by role, not by directory: what shipped prose tells an agent to
+      follow **is** a resource of the skill, whatever the folder is called,
+      and moves to `references/`; only the rest becomes a dot-path.)*
+- [ ] **Shipped prose must not cite a private development journal.** If a
+      `references/` file needs something from `PROJECT-MEMORY.md`, a
+      dispatch history or a branch log, put the substance in the prose —
+      do not drag the journal into the distribution to satisfy the
+      reference. *(Found the same day, by the repository's own session,
+      while sorting the previous item: three such citations. It is the
+      standing README rule applied where it also belongs.)*
+- [ ] **Do not filter by a guessed directory name — filter on what the
+      author declares.** *(The importing library was about to exclude
+      `docs/` by name, at the moment the one repository that has a large
+      one was preparing to rename it to a dot-path; the filter would have
+      been dead code on the day it shipped, and would have broken the first
+      skill where `docs/` means documentation for the agent. A declared
+      marker already exists — the leading dot, refused on every path
+      component — so the fix may be documenting the contract rather than
+      writing a heuristic.)*
 - [ ] `git config user.name`/`user.email` set **locally in that repo**
       before the first commit — global config is not set on this machine.
       *(Hit twice this session: "Author identity unknown," both times on a
