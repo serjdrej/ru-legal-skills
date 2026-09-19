@@ -515,6 +515,24 @@ neighbour while the second makes it look structural. Show both **where they
 diverge in meaning** — not always, or every figure acquires a companion and
 the reader stops noticing the cases where the divergence is the point.
 
+**A valid experiment on a state the system cannot reach proves something
+about the component and nothing about the pipeline.** 2026-09-19: a session
+tested whether the skill library would expose a dot-prefixed directory. It
+placed one into the library's copy **by hand**, then asked for the resource
+listing, and the listing showed it — from which it concluded the protection
+does not work. The experiment was correctly run and the conclusion was
+false: the importer refuses any leading-dot path component on copy, so that
+state never occurs in the pipeline. Checked independently here — **zero
+dot-paths across all 70 imported skills.**
+
+What survived is worth as much as the alarm was worth nothing: the listing
+function really does *not* filter leading dots (`catalog.resources()` skips
+only `SKILL.md`), so the protection is **one layer**, and anything that
+enters the tree by another route would be listed and readable. The finding
+was true of the component and false of the system, and only the second half
+was reported. **Before concluding from a fixture, ask whether the pipeline
+can produce the state you built.**
+
 **Provenance is corrupted from the flattering side too: crediting a peer
 with an insight they never claimed.** §8 already says a measurement loses
 its author in transport. The mirror image appeared on 2026-09-19 and is
