@@ -526,7 +526,12 @@ state never occurs in the pipeline. Checked independently here — **zero
 dot-paths across all 70 imported skills** — and then settled properly by
 the skill's own session with the experiment both of us had skipped: a
 fixture with three directories run through the real importer into staging,
-where `docsX/` arrived and `.dev/` did not.
+where `docsX/` arrived and `.dev/` did not. **Reproduced here on a second,
+independently built fixture** after the library session pointed out that my
+earlier check had merely re-run the three commands it had named — the same
+pointer, not a second look: `docsX/note.md` and `references/r.md` arrived,
+`.dev/journal.md` did not. Two experiments, two fixtures, two sessions, and
+only now does the agreement between them carry weight.
 
 **That pair is the point, and it is what my check lacked.** Zero dot-paths
 in the library is consistent with "the importer refuses them" *and* with
