@@ -608,6 +608,26 @@ a non-zero count on a bare number was read as "this topic is covered" while
 the hits belonged to another code. A skill measuring its own coverage by bare
 numbers measures someone else's.
 
+**The operative test is not "repeat the code every time" but "nothing nearer
+competes at the point of citation".** `legal-ru` calibrated it on its own
+repository the day this section landed, and the three cases are worth more
+than the rule alone:
+
+- *A code named one sentence earlier is not enough.* Its
+  `references/commercial-secrecy.md` read «…ст.10 нужно проверить…» on the
+  strength of a 98-ФЗ named in the previous sentence. Fixed to «ст.10 98-ФЗ».
+  This is what the skill hands a user, which is where the rule bites hardest.
+- *A code opening the same sentence and governing a list is enough.* Its
+  `docs/BRIEF.md` reads «ГК РФ Главы 27–29 …, ст.431 …, ст.333 …» — left as
+  it stands, correctly: nothing competes for the antecedent.
+- *And the configuration between them:* «two real amendments to 98-ФЗ … 86-ФЗ
+  (amending ст.5) and 311-ФЗ (amending ст.6)». The governing code opens the
+  sentence, so the test is met — but two **different** act numbers stand
+  between it and the citation, and they are nearer. It resolves only because
+  a reader knows an amending law amends the base law's articles. Sound as
+  prose in a design document; **it would not be sound in anything a verifier
+  parses or a user is handed**, which is the line to draw.
+
 Write the rule to cover both carriers. The same requirement was already
 mandatory in one plugin's verifier markup — act code, no defaulting to АПК —
 on the strength of the УК case alone; that it now also holds for prose is the
