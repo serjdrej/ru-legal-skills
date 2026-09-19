@@ -58,6 +58,28 @@ separately and decisively, **how many of them a check would have overturned**.
 The first number tells you the mechanism has work; only the second tells you
 the work is worth doing. Here the second was zero out of 488.
 
+## Two traps when the thing being counted is your own compliance
+
+Both found on 2026-09-19, while counting how many shipped fields already
+violated a rule written the same hour.
+
+**A rough pattern over-counts, and it does so every time.** A scan for
+constants named `*NOTE|CAVEAT|WARNING` containing a digit returned 16 fields
+"carrying a measurement"; reading them cut it to 11. The five removals were a
+statute number read as a figure, two notes describing tool behaviour, and one
+that substitutes its date at run time. Third instance in two days of a
+non-zero count collapsing on inspection, **and all three collapsed downward** —
+a rough pattern inflates, it does not deflate, so a count nobody has read is
+an upper bound and should be reported as one.
+
+**A date inside a field is not necessarily the date of the measurement.**
+`HEAD_NOTE` in the same repository reads «(замер: ИНН 9103086750, дата
+прекращения 13.01.2022)» — a date, but the *measured content*, not when the
+measuring happened. An automatic "does this field carry a date?" check passes
+it and reports false compliance. Counting compliance mechanically fails in the
+opposite direction from counting violations mechanically: the first
+under-reports, the second over-reports.
+
 ## Why this belongs in the marketplace docs
 
 The measurement is cheaper than the build in every case where it applies, and

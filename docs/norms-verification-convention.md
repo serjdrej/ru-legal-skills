@@ -408,6 +408,25 @@ shape as a ✅ without its redaction identifiers in §7, arrived at from the
 opposite direction. A measured value in a field carries the measuring lane and
 the date, or it carries the command that reproduces it.
 
+*Worked example of the requirement, and better than a signature would be.*
+`arbitrazh-ru`'s `STATUS_CAVEAT` (`scripts/egrul_lookup.py`) states that an
+empty termination-date field does not mean the entity is trading, and then
+carries «замер 2026-09-18» together with **two ИНН** — one entity in
+liquidation, one in bankruptcy — by which anyone can reproduce the finding in
+a command. Date plus reproducer beats a lane's name: a name tells you whom to
+ask, a reproducer survives the lane. Measured compliance across that
+repository on 2026-09-19: of eleven fields carrying a measurement, eight
+carry a date, three do not, and **none carries its measurer** — the rule was
+written from a real and general gap, not an imagined one.
+
+*The same loss runs in both directions, and the second is unnoticeable from
+inside.* In one day the same lane read another lane's figures out of a field
+and reported them as its own, and had its own measurement travel into a third
+lane's shipped field with neither date nor author attached. Taking someone
+else's finding for yours you can eventually catch; your own finding going
+anonymous downstream you cannot, because nothing anywhere is now wrong — it is
+merely unattributable.
+
 **Portability caveat, stated rather than discovered later:** none of the four
 linters has been run in `legal-ru`, `patent-ru` or `gost-ed-mashiny`. This
 section enters the convention on the same footing §7 had *before* each plugin
