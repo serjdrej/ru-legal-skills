@@ -115,6 +115,25 @@ hypothetical — see the note after each one.
       login and both UUIDs **before every merge**, on the grounds that the
       last one to look before publishing to two mirrors is cheaper than one
       missed look.)*
+- [ ] **State a repository's visibility only after `gh repo view <repo>
+      --json isPrivate`, never from memory.** *(2026-09-19: two independent
+      sessions each told the owner "public repository" about the same
+      private one, in the same direction, within hours. That is not
+      carelessness twice — it is a property: four of this family's six
+      repositories are public, so "public" is the default assumption, and
+      it is wrong exactly when it matters, which is while someone is
+      sizing a leak.)*
+- [ ] **A watchdog script is not a watchdog until something invokes it.**
+      Before writing one, name what will trigger it. *(2026-09-19: the
+      importing project has had a working upstream-drift checker since
+      14 September, routing for what to do with its findings, and a
+      `schtasks` line in a document that has never been run. Over those
+      five days drift was caught three times — every time by a letter from
+      another session, never by the tool. The same repository has a
+      scheduled task whose nightly run has never once been observed. The
+      gap is not in the code and not in the intent: nothing calls it. A
+      trigger tied to an action that already happens beats a schedule
+      nobody installs.)*
 - [ ] `git config user.name`/`user.email` set **locally in that repo**
       before the first commit — global config is not set on this machine.
       *(Hit twice this session: "Author identity unknown," both times on a
