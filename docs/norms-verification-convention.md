@@ -612,6 +612,16 @@ day two other sessions independently told the owner a private repository was
 public, in the same direction, for the same structural reason — four of six
 repositories here are public, so "public" is the resting premise.
 
+**And it is worse than gaining nothing — it manufactures confidence.** The
+library session's closing form, which is stronger than the sentence above
+and belongs with it: *two people who ran one command get the certainty of
+one, and pay for two, because both now believe it was checked twice.* So a
+double-check that shares a premise is not equal to a single check, it is
+**worse**, and the error grows with the number of checkers. The day this
+was written produced five of them — one share counted twice, one saving
+counted twice, one scanner's zero read twice, and "two independent
+sources" claimed three times, counting the claim in this very section.
+
 This is the failure mode that survives the discipline the rest of this
 document is built on: running your own command does not help when your
 command encodes the same wrong premise. **What catches it is stating the
