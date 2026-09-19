@@ -394,6 +394,20 @@ that turned out to be in English. Neither failure feels like a failure:
 both return promptly, and one of them returns exactly the line that
 confirms what you expected.
 
+**A field also reports what another lane measured, and that is invisible in
+it.** A measurement travelling through an output field sheds its author, its
+date and its corpus on the way. `arbitrazh-ru`'s `MORPHOLOGY_NOTE` reads
+«…падеж существительного может менять число совпадений вдвое (измерено:
+«неустойка»=20, «неустойки»=37, «неустойку»=8)» — the word *measured* and the
+figures, but not by whom, when, or against what. At the point of use it reads
+as a property of the source; the lane that cited it in good faith reported the
+figures as its own finding, and the mis-attribution reached this document.
+**The cost is not credit.** It is that an unattributed, undated measurement
+**cannot be re-checked and cannot be allowed to expire** — the same defect
+shape as a ✅ without its redaction identifiers in §7, arrived at from the
+opposite direction. A measured value in a field carries the measuring lane and
+the date, or it carries the command that reproduces it.
+
 **Portability caveat, stated rather than discovered later:** none of the four
 linters has been run in `legal-ru`, `patent-ru` or `gost-ed-mashiny`. This
 section enters the convention on the same footing §7 had *before* each plugin
