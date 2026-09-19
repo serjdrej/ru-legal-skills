@@ -506,6 +506,22 @@ neighbour while the second makes it look structural. Show both **where they
 diverge in meaning** — not always, or every figure acquires a companion and
 the reader stops noticing the cases where the divergence is the point.
 
+*Second instance, and it is mine, committed the day this corollary was
+written.* Recommending the editing rule to three plugins, I ranked their
+cases by growth ratio and told `patent-ru` its case was the weakest of the
+three: ×2,7 against ×8,6 and ×9,3. The ratio is true and it is the wrong
+statistic. That session checked and answered with the shape of the curve
+instead: its file sat at 56–65 lines for six days, then took **one step of
++54 lines in a single commit** (`640423e`, the gap protocol), breaching a
+budget its own README states out loud — «роутер (≤100 строк)» — which then
+went unnoticed for five days, including by a session editing that README.
+Verified here. So the honest reading is not "weakest case" but **"the
+failure this rule prevents has already happened here once, whole and
+uncaught"**, and the ratio hid it by construction: an average over eleven
+days smooths away the single event the rule exists for. When the question
+is *whether a mechanism is needed*, a rate is the wrong shape of number —
+ask what the largest single event was.
+
 **Portability, measured rather than assumed (updated 2026-09-19).** One of
 the four linters is now confirmed portable by live run: `router_lint.py`
 against `legal-ru` returns `unreachable_references: []` and
