@@ -583,6 +583,27 @@ above is the recovery, not the prevention. The prevention is the same one
 as for a shared premise: **name the unit before counting**, not after the
 totals disagree.
 
+**"Correct now, will break later" is a claim about the present, and is
+checked like any other — with a command, over every instance of the kind,
+not over the one that caught your eye.** Mine, 2026-09-19. I noticed that a
+skill cited this document by line range, checked that range, found it still
+correct, and passed it on as a minor note requiring no action. Two things
+were wrong with that. The file held **four** such citations, not one — and
+one of them, into its own `SKILL.md:110-114`, was **already broken**: the
+marker vocabulary had moved to 132–134 and those lines now carried a
+paragraph about commencement dates, so a reader following the reference
+landed on plausible text about a different subject with no way to notice.
+Verified here against the commit before the repair.
+
+The severity I attached was the damaging part, not the incompleteness: had
+that session accepted "no action needed" together with the finding, it
+would not have opened the file. **A finding and an estimate of its urgency
+are two claims, and the second is the one that decides whether anyone
+looks.** It pairs exactly with the obstacle rule below — there a session
+accepted its own claim that something needed avoiding; here one nearly
+accepted someone else's that nothing needed checking. Both were claims
+about whether to look, which is why neither looked like a claim at all.
+
 **An assessment of an obstacle is checked the same way as a claim about
 state — with a command. "Let us wait, just in case" is a claim about the
 world, not a neutral position.** `arbitrazh-ru`'s, 2026-09-19, and its own
