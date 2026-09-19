@@ -547,8 +547,24 @@ what breaks for a skill that ignores it.
   out well precisely when the author cannot hide the defect behind a fix.
   Recorded here rather than as a rule because it fails the filter — there is
   no answer to what breaks for a skill that ignores it, and the evidence is
-  one field and an inference. Worth testing against the next good caveat
-  anyone writes: was it also written where nothing could be repaired?
+  one field and an inference. Its author agreed with the refusal before
+  agreeing with the reasoning behind it, which is the useful part: **a filter
+  applied only to other people's ideas is not a filter.**
+
+  **It is falsifiable, and it is being measured.** The prediction: a caveat
+  written where a fix *was* possible will be the weaker one — a general word
+  where the other has an ИНН, «иногда» where the other has a number. Strong
+  caveats from repairable situations refute it, and they refute it visibly.
+  `arbitrazh-ru` sees every new caveat at merge review — roughly ten over two
+  days — and is recording one question against each: could this have been
+  repaired instead of described? That turns the conjecture into a count
+  rather than an impression, at no extra cost to anyone.
+
+  The mechanism it proposes, worth keeping even if the conjecture falls:
+  **while a repair is still possible, the honest statement feels optional.**
+  That explains more than fields — it is also why three of this document's
+  own corrections came from prior substituted for a check by people who
+  could have run the check, and did not precisely because they could.
 - **Granularity of extraction.** `read_skill_resource` cannot address a
   section — a resource is read whole — so moving a section out as one large
   file can cost more than the section did inline. One measurement on one
