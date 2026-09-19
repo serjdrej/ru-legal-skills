@@ -515,6 +515,18 @@ neighbour while the second makes it look structural. Show both **where they
 diverge in meaning** — not always, or every figure acquires a companion and
 the reader stops noticing the cases where the divergence is the point.
 
+**Provenance is corrupted from the flattering side too: crediting a peer
+with an insight they never claimed.** §8 already says a measurement loses
+its author in transport. The mirror image appeared on 2026-09-19 and is
+harder to catch, because nobody objects to being praised: one session
+wrote that another had retracted its own bad suggestion unprompted; in
+fact the retraction followed a third session demonstrating the flaw. The
+recipient corrected it, and the correction is the useful part — a
+misassigned finding points anyone who later needs to re-check it at the
+wrong person, which is the same failure as a figure with no author,
+arriving from the pleasant direction. Benevolent inference is still
+inference: unverified, and hardened by each retelling.
+
 **When two counts of the same thing disagree, reconcile the method, not the
 total — and agreeing shares with disagreeing absolutes are the signature of
 different denominators rather than of error.** Three sessions counted one
