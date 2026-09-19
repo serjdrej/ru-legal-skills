@@ -657,7 +657,26 @@ what breaks for a skill that ignores it.
   holds the eval's 33 answers, not the route costs.)
 
   **Unmeasured must be measured; unrecorded must be retrieved** — and this is
-  the second. Retrieved the same day, and recomputed here independently
+  the second. **Now recorded, and the figure is restored** (2026-09-19): the
+  session that ran the eval put it in
+  `lazy-skill-library/docs/reviews/2026-09-18-outline/MEASUREMENTS.md` §1 on
+  `master`, with the command that reproduces it beside it, the corpus named
+  (13 eval runs touching `upstream/arbitrazh-ru`, tasks L1/L3/T3) and the
+  model of each arm named. Verified here that the file is on `master` and
+  carries the command.
+
+  So the entry now rests on two independent sources rather than one: that
+  record, and my own recomputation from the raw logs below. That is the
+  whole point of the retraction — the number was never wrong, it had no
+  address, and an address is what it now has.
+
+  *And it does not rot, which was the other open question.* Per that session
+  (attributed, not re-measured here): over the following day the skill's body
+  grew 43 629 → 49 194 B and the route grew 13 182 → 14 957 B, moving the
+  share from 30,2 % to 30,4 %. The ratio is a property of the skill's shape,
+  not a snapshot of one day, so it does not need re-measuring on every edit.
+
+  Retrieved the same day, and recomputed here independently
   rather than taken back on report: summing the `bytes` field over the shim
   logs gives **13 182 B in each of three byte-identical T3 runs against a
   43 629 B body — 30,2 %, a saving of 69,8 %**. Two medians follow, and they
