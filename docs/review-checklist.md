@@ -152,6 +152,13 @@ hypothetical — see the note after each one.
       is by role, not by directory: what shipped prose tells an agent to
       follow **is** a resource of the skill, whatever the folder is called,
       and moves to `references/`; only the rest becomes a dot-path.)*
+      **Count the citing files, not the cited ones** — you will be editing
+      the citers. *(Same day: counting by target gave "three journals
+      referenced" and hid a fourth citing file, which would have been left
+      with a dangling reference after the move. Counting by source gave six
+      citations in four files. Also use `git grep`, not `grep -r`: the
+      latter counted a `.pyc` as a ninth file, matching binary content that
+      is not even tracked.)*
 - [ ] **Shipped prose must not cite a private development journal.** If a
       `references/` file needs something from `PROJECT-MEMORY.md`, a
       dispatch history or a branch log, put the substance in the prose —
