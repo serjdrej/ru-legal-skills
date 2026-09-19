@@ -406,7 +406,15 @@ figures as its own finding, and the mis-attribution reached this document.
 **cannot be re-checked and cannot be allowed to expire** — the same defect
 shape as a ✅ without its redaction identifiers in §7, arrived at from the
 opposite direction. A measured value in a field carries the measuring lane and
-the date, or it carries the command that reproduces it.
+the date, or it carries the command that reproduces it — **and the second
+branch is the primary one, not the fallback.** A date cannot always be
+recovered: `MORPHOLOGY_NOTE`'s figures sit in a measurements file with no
+date, and the constant's first appearance in history, 2026-09-16, is when it
+was committed rather than when it was measured. Back-filling that date would
+pass the approximate off as measured, which is the defect the rule exists to
+stop, so the lane refused to and put the command there instead. **A date is
+sometimes unrecoverable; a command can always be constructed**, and it is the
+form that survives the loss of the journal that recorded the measurement.
 
 *Worked example of the requirement, and better than a signature would be.*
 `arbitrazh-ru`'s `STATUS_CAVEAT` (`scripts/egrul_lookup.py`) states that an
@@ -531,6 +539,16 @@ what breaks for a skill that ignores it.
   quantity: at 43 KB its routes cost 70% less than a full read, and the
   planned cut makes the same route 83% dearer. The reasoning is plausible and
   the bytes are measured; they disagree, so neither becomes a rule.
+- **Whether a caveat comes out good because it could not be fixed.** The
+  exemplar in §8 was written where the defect was unfixable — the source
+  does not report whether an entity is in liquidation, so the lane could not
+  repair the code and could only state the gap honestly, with two ИНН that
+  prove the emptiness means nothing. Its author's conjecture: fields turn
+  out well precisely when the author cannot hide the defect behind a fix.
+  Recorded here rather than as a rule because it fails the filter — there is
+  no answer to what breaks for a skill that ignores it, and the evidence is
+  one field and an inference. Worth testing against the next good caveat
+  anyone writes: was it also written where nothing could be repaired?
 - **Granularity of extraction.** `read_skill_resource` cannot address a
   section — a resource is read whole — so moving a section out as one large
   file can cost more than the section did inline. One measurement on one

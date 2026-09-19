@@ -72,6 +72,12 @@ non-zero count collapsing on inspection, **and all three collapsed downward** �
 a rough pattern inflates, it does not deflate, so a count nobody has read is
 an upper bound and should be reported as one.
 
+**And the two directions together.** A truncated output errs the other way:
+`head -5` over nineteen matches produced a false *zero*, not an inflated
+count. So an unread rough count is an **upper** bound, a truncated one is a
+**lower** bound, and **neither is a number.** Report whichever bound you
+have, or read the output.
+
 **A date inside a field is not necessarily the date of the measurement.**
 `HEAD_NOTE` in the same repository reads «(замер: ИНН 9103086750, дата
 прекращения 13.01.2022)» — a date, but the *measured content*, not when the
