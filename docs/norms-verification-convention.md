@@ -443,8 +443,16 @@ dangerous one: a substituted figure is caught by recomputing it, while a
 transported figure is *correct* and caught by nothing except the question
 "where is this written down?" — which nobody asks, because each retelling
 makes the number look sturdier for having a new mouth behind it. Three
-retellings put two percentages into §11 of this document that exist in no
-file anywhere; see the correction there.
+retellings put two percentages into §11 of this document; see the correction
+there. Sharper, after the sequel: **a retold number without a reference to a
+record is worse than no number at all.** An absent figure is visible as
+absent. A retold one looks like knowledge and gains solidity with each new
+mouth behind it — and the basis here was not even missing. Thirty-four logs
+carrying `cmd`, `args` and `bytes` per call sat committed in the repository
+while three sessions passed the figure between them by name, each step
+sufficient-looking because whoever said it was present and could vouch. The
+record existed; **the reference to it did not**, and that is the whole
+distance between knowledge and hearsay.
 
 *A corollary about presenting figures, from the same exchange.* A quantity
 chosen to suit a conclusion **does not thereby become false**, so no check
@@ -580,9 +588,22 @@ what breaks for a skill that ignores it.
   holds the eval's 33 answers, not the route costs.)
 
   **Unmeasured must be measured; unrecorded must be retrieved** — and this is
-  the second. The entry stays open until the number comes back out of those
-  logs with the command beside it, not because anyone needs to run anything
-  again.
+  the second. Retrieved the same day, and recomputed here independently
+  rather than taken back on report: summing the `bytes` field over the shim
+  logs gives **13 182 B in each of three byte-identical T3 runs against a
+  43 629 B body — 30,2 %, a saving of 69,8 %**, and across all 34 logs a
+  median of 7 576 B, a saving of 82,6 %. So the figure that travelled as
+  "70 %" was real, and was computable by any of the three sessions retelling
+  it, in one command, from a directory one of them had committed the day
+  before.
+
+  **Only one of the two numbers came back, and the asymmetry matters.** The
+  second — "the planned cut makes the same route 83 % dearer" — concerns a
+  cut that has not been made, so it cannot be in these logs and its origin
+  remains unknown. The retracted pair was therefore not two unprovenanced
+  figures: it was one real measurement that lost its address, set beside one
+  projection, with the sentence presenting both as measured. That is the
+  worse half of the defect, and it survived a day longer than the first.
 
   What is independently reproducible meanwhile: the other three plugins'
   bodies run 19.2–19.7 KB against a measured 20 063 B point where
