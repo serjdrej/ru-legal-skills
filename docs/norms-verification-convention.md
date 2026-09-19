@@ -110,6 +110,32 @@ sharper corollaries, learned the hard way:
   that is a property of the specific tool, not evidence that "no agent" can
   reach the host.
 
+### Known properties of the shared sources — measured, not inferred
+
+Measured by `arbitrazh-ru` on the dates given and **not re-measured here**;
+recorded because each one is a property of a source all four plugins query,
+not of one plugin's code.
+
+- **Case form in `by-title` loses amendments silently.**
+  `publication.pravo.gov.ru` matches on substring without declension, so the
+  nominative and genitive forms of the same title return different histories:
+  for АПК the nominative stops at 2023-12-25 while the genitive reaches
+  2024-06-20; for НК the gap exceeds a year; for ГК it is twelve years.
+  Abbreviations («АПК РФ», «ГПК РФ») return zero matches. **Run both forms.**
+  One form is not a wrong answer — it is a quiet loss, which is worse.
+- **Redaction order in ИПС is not signing order.** Measured 2026-09-18 on
+  АПК: the current redaction is `rdk=89` of 28.11.2025, while `rdk=88` was
+  signed *later*, on 15.12.2025. The ordering reflects entry into force, not
+  signature. "Latest by date" and "in force" are different questions and
+  neither follows from the other.
+- **For large codes the consolidated text is not prepared for every
+  redaction.** НК: 31 of 870. АПК: 65 of 90. `text --rdk` on an unprepared
+  redaction returns an empty result with a note, not text — a property of the
+  source, and a script's output must distinguish the two.
+- **The HTTP/HTTPS trap on `pravo.gov.ru`** is the same one documented at the
+  top of this section; it is listed again in the plugins' own registries
+  because it cost days.
+
 ## 4. A script is not mandatory — an honest navigation route is a legitimate outcome
 
 Build a lookup script only when a real, testable, query-able source exists.
@@ -246,8 +272,8 @@ consulted, splitting the gap into two cases:
    tool at hand answers it.** The wording is `arbitrazh-ru`'s, from its
    `docs/PROJECT-MEMORY.md`, and it generalises: in a plugin that ships a
    script reaching this source, "не проверял" about a federal act is a
-   defect, not a careful answer. Its sharp edge, which the rule alone does
-   not cover: reading the text and establishing which redaction is current
+   defect, not a careful answer. Its sharp edge — named by the session drafting the growth
+   layer, not by the rule's author — which the rule alone does not cover: reading the text and establishing which redaction is current
    are **two separate questions, and answering the first does not close the
    second** — a figure read out of a named redaction is confirmed only as
    the text of that redaction until its currency is established separately.
@@ -291,7 +317,54 @@ recognized as weaker evidence than the other plugins' tests — a real example
 of not trusting a skill's own first self-report, the same discipline this
 family's reviews apply to sessions.
 
-## 8. What this document is for
+## 8. The field reports the tool, not the world
+
+*(Written by `arbitrazh-ru`, 2026-09-19, and rendered into this document's
+language; the Russian field values are quoted as they actually read. Enters
+the convention with the portability caveat stated at the end.)*
+
+**The principle.** A value an instrument puts in its output asserts exactly
+what the instrument did. «Отметки об отмене нет» means *the pattern found no
+marker*, not *the act is in force*. «Текста нет» means *the source returned
+no text*, not *no text exists*. «Статья не найдена» means *it is not in this
+act*, not *no such norm exists*.
+
+**What it rests on.** Three findings in three different scripts within the
+24 hours of 17–18.09: a `repeal_absent_note` on records from a section where
+the banner is never placed at all; `entity_status: terminated`, a name that
+asserts about a legal person what honestly reads as "the register carries a
+termination date"; an empty `--article` on an order that is divided into
+clauses, not articles. **Each was found by someone other than the code's
+author** — which is the point: the author reads the name as the intent.
+
+**What breaks without it.** A negative result becomes indistinguishable from
+the absence of a norm, and gets quoted as a conclusion. This is the only
+defect class known in this family that neither a test run nor a file
+comparison catches: the right answer and the wrong answer look identical.
+
+**Two naming rules.** A value names the source or the action («дата
+прекращения не сообщена», «отметка не найдена»), never a state of the world
+(«ликвидировано», «действует»). And a pair of values that are not each
+other's complement must not pose as one: "not reported" is not "none".
+
+**Mechanising it — linters.** A linter script checks what a human otherwise
+checks from memory. `arbitrazh-ru` runs four: route reachability, filled-list
+shape, field-map drift, and cited phrases against the act's text. The
+principle above dictates two requirements on a linter's own output. **Skips
+must appear in the output as a count and a list** — otherwise "skipped for
+reason" becomes a stamp and the check goes green on what it never examined.
+**An unverifiable measurement must be named in the output, not only in the
+documentation** — if the linter compares the phrase but not the part number,
+the output says so, or the reader completes the picture himself, in the
+dangerous direction.
+
+**Portability caveat, stated rather than discovered later:** none of the four
+linters has been run in `legal-ru`, `patent-ru` or `gost-ed-mashiny`. This
+section enters the convention on the same footing §7 had *before* each plugin
+ran its own pass — as a principle worth adopting, not as a demonstrated
+cross-plugin fact.
+
+## 9. What this document is for
 
 This is **style guidance for whoever adds the next plugin to this
 family** — not a schema to validate against, and not code to import. There
