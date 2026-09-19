@@ -454,6 +454,18 @@ sufficient-looking because whoever said it was present and could vouch. The
 record existed; **the reference to it did not**, and that is the whole
 distance between knowledge and hearsay.
 
+**The second kind of transport loss is worse, and the first made it
+visible.** What travels away is sometimes not the number but **the
+qualifier attached to it**. §11's projection was downgraded to "a projection
+under an assumption" within an hour of being stated; the downgrade went one
+way, the figure went another, and the figure arrived bare. A missing
+reference is detectable — someone eventually asks where it is written. **A
+missing qualifier is detectable by nothing**, because a number stripped of
+its caveat is byte-identical to a number that never needed one. So §10's
+carrier rule applies to qualifiers moving between people, not only between
+files: send the qualifier in the same message as the figure, or expect it to
+arrive alone.
+
 *A corollary about presenting figures, from the same exchange.* A quantity
 chosen to suit a conclusion **does not thereby become false**, so no check
 for correctness will catch it: 6 927 bytes and 39 % of the body are both true
@@ -599,11 +611,26 @@ what breaks for a skill that ignores it.
 
   **Only one of the two numbers came back, and the asymmetry matters.** The
   second — "the planned cut makes the same route 83 % dearer" — concerns a
-  cut that has not been made, so it cannot be in these logs and its origin
-  remains unknown. The retracted pair was therefore not two unprovenanced
-  figures: it was one real measurement that lost its address, set beside one
-  projection, with the sentence presenting both as measured. That is the
-  worse half of the defect, and it survived a day longer than the first.
+  cut nobody has made, so it cannot be in these logs. Its author has since
+  named its origin: a calculation of his own, 13 741 + 10 433 = 24 174 B
+  against 13 182, arithmetically sound and resting on an assumption the
+  cutting lane disputed the same day and he accepted — that after extraction
+  an agent reads the remainder whole. They agreed to write it as "a
+  projection under an assumption". **That downgrade travelled a different
+  route and never arrived here**, so the figure reached this document naked.
+
+  Its status, in the words its author proposed and which are the right ones:
+  **a projection about an operation that was never performed; the operation
+  has since changed, and the number no longer refers to it.** Not refuted,
+  not confirmed. The first cut has now been made and is a different
+  operation — headings inside the file rather than extraction to
+  `references/`, no word of content altered — taking the case-1 question
+  from 19 455 to 4 925 B at a cost of 259 B for reading the outline
+  (measured by `arbitrazh-ru`, not re-measured here).
+
+  So the retracted pair was: one real measurement that lost its address, and
+  one projection that lost its qualifier. The sentence presented both as
+  measured.
 
   What is independently reproducible meanwhile: the other three plugins'
   bodies run 19.2–19.7 KB against a measured 20 063 B point where
