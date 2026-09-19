@@ -674,8 +674,42 @@ what breaks for a skill that ignores it.
   this section, and did not land in a file at any step. (`results.json` there
   holds the eval's 33 answers, not the route costs.)
 
-  **Unmeasured must be measured; unrecorded must be retrieved** — and this is
-  the second. **Now recorded, and the figure is restored** (2026-09-19): the
+  **Third state of this number in one day, and the last one is the one to
+  cite.** The figure below was measured against the skill's *text*. The eval
+  shim reads only the `content` field, while the MCP tool returns the whole
+  response — `content` plus `skill_bytes`, `unavailable_paths` and a
+  **`resources` array listing every file of the skill with its size**, paid
+  on *every* call including `outline`. **Verified here the only way that
+  could catch it: by calling `read_skill` and paying for the answer**, not by
+  recomputing from logs the shim wrote. The array arrived, 96 entries for
+  this skill. Byte figures are the measuring session's, not re-counted here:
+
+  | | by the skill's text | by the tool's whole response |
+  |---|---|---|
+  | route T3 | 13 182 B | 36 310 B |
+  | full read | 43 629 B | 51 665 B |
+  | **saving** | **69,8 %** | **29,7 %** |
+
+  **Cite the pair, not either half** — "69,8 % of the skill's text, 29,7 % of
+  what the tool actually returns; the gap is a resource listing charged on
+  every call". Naming where the gap comes from is what makes the pair
+  honest, and the direction survives both: routing beats reading whole.
+
+  **And the sting in it: the better the outline works, the more calls, and
+  every call buys the listing again.** Three section reads pay three
+  listings. That is a finding for the library rather than for this
+  convention, and it means the number may move once more when someone
+  measures it properly.
+
+  **This is the shared-premise failure above, fired on the very number that
+  produced the rule.** I recomputed from the logs and matched the other
+  session to the digit; both counts were real and both inherited one
+  unspoken premise — that `content` is what an agent pays for. Neither of us
+  said it aloud. What broke the tie was not a third count but *looking at
+  what the tool returns*.
+
+  **Now recorded, and the earlier figure is kept for its provenance**
+  (2026-09-19): the
   session that ran the eval put it in
   `lazy-skill-library/docs/reviews/2026-09-18-outline/MEASUREMENTS.md` §1 on
   `master`, with the command that reproduces it beside it, the corpus named
