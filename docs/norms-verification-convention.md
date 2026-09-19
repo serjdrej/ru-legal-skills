@@ -466,6 +466,20 @@ carrier rule applies to qualifiers moving between people, not only between
 files: send the qualifier in the same message as the figure, or expect it to
 arrive alone.
 
+**And "the same message" is not enough.** The projection above was
+downgraded in a letter to one lane while the figure had already gone to
+someone else in another — both messages honest, both from the same author,
+divergent only because the recipients differed. The strict form is *the
+qualifier reaches everyone who received the figure*, which requires
+remembering who that was; its author says plainly he keeps no such ledger
+and does not know how to. Nobody does. **The answer is not a ledger: it is
+that the figure's record carries its current status**, so that anyone
+following the reference sees the downgrade whether or not they were on the
+original distribution. Which is the argument for reference-over-retelling a
+second time and for a different reason — the first was that a retold number
+cannot be re-checked, this one is that a retold number cannot be
+*corrected*.
+
 *A corollary about presenting figures, from the same exchange.* A quantity
 chosen to suit a conclusion **does not thereby become false**, so no check
 for correctness will catch it: 6 927 bytes and 39 % of the body are both true
@@ -603,8 +617,19 @@ what breaks for a skill that ignores it.
   the second. Retrieved the same day, and recomputed here independently
   rather than taken back on report: summing the `bytes` field over the shim
   logs gives **13 182 B in each of three byte-identical T3 runs against a
-  43 629 B body — 30,2 %, a saving of 69,8 %**, and across all 34 logs a
-  median of 7 576 B, a saving of 82,6 %. So the figure that travelled as
+  43 629 B body — 30,2 %, a saving of 69,8 %**. Two medians follow, and they
+  are labelled by *what each is a median of*, because they answer different
+  questions and one of them flatters:
+
+  | Median | Of what | Saving |
+  |---|---|---|
+  | 7 576 B | the mechanism, over all 34 shim logs | 82,6 % |
+  | 11 123 B | **this skill**, over the 13 logs that touch it | 74,5 % |
+
+  Both recomputed here. Publishing only the first would let a reader take a
+  statement about the mechanism for a statement about the skill, and in the
+  optimistic direction — which is precisely the divergence-in-meaning case
+  that §8's corollary says to show both for. So the figure that travelled as
   "70 %" was real, and was computable by any of the three sessions retelling
   it, in one command, from a directory one of them had committed the day
   before.
