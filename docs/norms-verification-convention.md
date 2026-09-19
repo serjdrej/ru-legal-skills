@@ -215,11 +215,24 @@ consulted, splitting the gap into two cases:
    line between them runs between *scripts*, not between plugins** — name
    the script that produced the finding, never "a live search":
 
-   | Script | Establishes | Never establishes |
+   | Call | Establishes | Never establishes |
    |---|---|---|
-   | `pravo_lookup.py` (publication records, publication.pravo.gov.ru) | that an act exists, is in force, and which amendments were published | the text of any article — its own docstring says so, and the word `article` does not occur anywhere in it |
-   | `ips_lookup.py` (ИПС «Законодательство России») | the consolidated text of an article **for one named redaction** | that the redaction returned is the one in force |
+   | `pravo_lookup.py by-title` (publication records) | that an act exists, is in force, and which amendments were published | the text of any article — its own docstring says so, and the word `article` does not occur anywhere in it |
+   | `ips_lookup.py redactions <nd>` | **which redaction the source itself marks as current** (`current_rdk`), and what redactions exist at all | which redaction was in force on the date the disputed relations arose — ИПС stores no commencement dates, so that is a legal question, not a reference one |
+   | `ips_lookup.py text <nd>` | the consolidated text of an article for one redaction | which redaction it just returned, unless `--rdk` was passed explicitly |
    | `gost_lookup.py status` (rst.gov.ru) | a standard's bibliographic status | anything about the standard's content |
+
+   **The rule behind the table matters more than the table: a capability
+   claim attaches to the call, not to the name above it.** This section got
+   the same error three times in one day, each time one level finer —
+   "a live search returns text" (false: two scripts, one of them a
+   publication register), then "`ips_lookup` cannot say which redaction is
+   current" (false: its `redactions` subcommand does, its `text` subcommand
+   does not). Scripts get renamed and subcommands get added; a sentence
+   pinned to what is actually invoked survives both. Note also that
+   `current_rdk` is computed as `"selected" in attrs` — it reports **what the
+   source marked**, not what the tool concluded, which is this same section's
+   own principle applied to itself.
 
    A finding from a publication-record or status lookup still leaves every
    specific figure — a percentage, a fee, a day count — as unverified
@@ -228,6 +241,16 @@ consulted, splitting the gap into two cases:
    redaction was read* (`nd` and `rdk`): a ✅ without them is worse than an
    honest paraphrase, because it reads as verified and goes stale silently
    the next time the redaction changes.
+
+   **An honest "not verified" marker does not close a question when the
+   tool at hand answers it.** The wording is `arbitrazh-ru`'s, from its
+   `docs/PROJECT-MEMORY.md`, and it generalises: in a plugin that ships a
+   script reaching this source, "не проверял" about a federal act is a
+   defect, not a careful answer. Its sharp edge, which the rule alone does
+   not cover: reading the text and establishing which redaction is current
+   are **two separate questions, and answering the first does not close the
+   second** — a figure read out of a named redaction is confirmed only as
+   the text of that redaction until its currency is established separately.
 
    `ips_lookup.py` is carried by `legal-ru`, `patent-ru` and `arbitrazh-ru`;
    `gost-ed-mashiny` deliberately does not carry it and records why — ГОСТы
