@@ -112,7 +112,10 @@ hypothetical — see the note after each one.
       `.ruff_cache`. A merge will not bring them back, since master is
       ahead; a pass that copies or commits the file wholesale will. The
       importing project's answer, worth copying: scan the tree for the
-      login and both UUIDs **before every merge**, on the grounds that the
+      login and both UUIDs **before every merge** — and **not with `git
+      grep`**, which sees tracked files at a tip while the copy that
+      matters lives as a loose file or inside a cache; walk the filesystem,
+      excluding `.venv` and `__pycache__`, on the grounds that the
       last one to look before publishing to two mirrors is cheaper than one
       missed look.)*
 - [ ] **State a repository's visibility only after `gh repo view <repo>

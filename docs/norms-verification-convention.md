@@ -338,9 +338,15 @@ clauses, not articles. **Each was found by someone other than the code's
 author** — which is the point: the author reads the name as the intent.
 
 **What breaks without it.** A negative result becomes indistinguishable from
-the absence of a norm, and gets quoted as a conclusion. This is the only
-defect class known in this family that neither a test run nor a file
+the absence of a norm, and gets quoted as a conclusion. This is **one of two**
+defect classes known in this family that neither a test run nor a file
 comparison catches: the right answer and the wrong answer look identical.
+The other, recorded in `arbitrazh-ru/docs/BRANCH-proof-elements.md`, is a
+file's statement *about nearby code* outliving a change to that code —
+file-against-file comparison is blind to it by construction, because each
+file is internally consistent and what lies is the link to a third. Stated
+as two rather than one deliberately: a convention that closes the count at
+one invites the reader to stop looking.
 
 **Two naming rules.** A value names the source or the action («дата
 прекращения не сообщена», «отметка не найдена»), never a state of the world
@@ -363,10 +369,11 @@ the reason this principle is worth a section rather than a sentence: a
 negative result is never stronger than the query that produced it, so
 "not found" is recorded together with **the form of the query and its
 reach**, and a zero after a single query form is not a finding. Measured by
-the `growth-research` lane: `vsrf.ru` search is lexical and case form halves
-or doubles the hit count — «неустойка» 20, «неустойки» 37, «неустойку» 8;
-its own conclusion "обзоры never carry full text" came from one query and
-was refuted by the second; and a neighbouring lane got a clean zero from a
+the `vsrf-practice` lane and relayed by `growth-research`: `vsrf.ru` search
+is lexical and case form halves or doubles the hit count — «неустойка» 20,
+«неустойки» 37, «неустойку» 8. `growth-research`'s own conclusion that
+«обзоры» never carry full text came from one query and was refuted by the
+second; and a neighbouring lane got a clean zero from a
 scan whose regex class `[^.]` excluded full stops, i.e. excluded the very
 dates it was scanning for. A zero looks identical whether it is true or the
 instrument is broken — which is what makes it the worst of the negative
