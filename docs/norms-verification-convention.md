@@ -583,6 +583,24 @@ above is the recovery, not the prevention. The prevention is the same one
 as for a shared premise: **name the unit before counting**, not after the
 totals disagree.
 
+**An assessment of an obstacle is checked the same way as a claim about
+state — with a command. "Let us wait, just in case" is a claim about the
+world, not a neutral position.** `arbitrazh-ru`'s, 2026-09-19, and its own
+case: it held a directory rename for half a day because renaming would
+supposedly conflict with four open lanes editing that directory, and wrote
+to two sessions asking them to wait. `git merge-tree` against all six
+branches afterwards: five clean, one conflict that **reproduces against
+master without the rename at all.** Zero new conflicts — git resolves
+rename-against-edit by itself, and every lane was editing existing files
+rather than adding or removing them. The assessment had been made by
+analogy with a class ("both sides restructure one file") that did not
+apply.
+
+The reason this escapes the discipline the rest of this document imposes:
+**caution presents itself as free, so the claim inside it is never put to
+the test a positive claim would get.** It is not free — here it cost half
+a day and two requests to other people, against one command.
+
 **A figure carries its domain or it will be read as universal — and an
 observation taken from the extreme case is the commonest way to lose it.**
 Mine, 2026-09-19, an hour after writing the rule below. Reading a tool's
