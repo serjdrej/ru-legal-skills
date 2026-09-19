@@ -515,6 +515,24 @@ neighbour while the second makes it look structural. Show both **where they
 diverge in meaning** — not always, or every figure acquires a companion and
 the reader stops noticing the cases where the divergence is the point.
 
+**A figure carries its domain or it will be read as universal — and an
+observation taken from the extreme case is the commonest way to lose it.**
+Mine, 2026-09-19, an hour after writing the rule below. Reading a tool's
+resource listing I saw that roughly half of it was `docs/` — development
+traces no route leads to — and reported that the library would halve the
+overhead by not listing them. True of the skill I was looking at, which is
+the most cluttered in the family. Checked across the library after the
+measuring session objected: **of 70 skills exactly two have a `docs/`
+directory at all** — 57 files in one, 2 in the other, none in the remaining
+68. Across all seventy the listing share is 22 %, not 50 %.
+
+The number was right and its scope was not, which changes the conclusion
+rather than softening it: the fix is worth −64 % of the overhead on one
+skill and −22 % across seventy, so it is concentrated rather than spread,
+and that changes whom it is worth proposing to. **Before generalising from
+a case, ask whether the case is typical or extreme** — I knew this one was
+extreme and generalised anyway, because the observation itself was sound.
+
 **Two independent counts are not independent if they share a premise, and
 agreement between them is worth nothing.** Twice on 2026-09-19: a figure
 «resources are 80 % of the library» was computed separately by two sessions
