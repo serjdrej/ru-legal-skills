@@ -301,6 +301,18 @@ plugin is listed at all.
 
 ## Testing status — track it, don't assume it
 
+- [ ] **Turning a week's findings into instructions: count the journal lines
+      you deleted, not the rules you moved.** A finding that has become an
+      instruction is no longer needed in the store; leaving both makes two
+      long documents and looks like work. *(The library session's measure,
+      2026-09-20, after both of us counted where the day's writing had gone:
+      85 % of mine and 92 % of theirs landed in documents read when
+      searching. The reason is the same for both — the storing document is
+      easier to write, because a claim there only has to be true, while an
+      instruction has to name whose repeating action it changes. And the
+      volume is not merely idle: it competes for attention with the few
+      lines that must be findable, so a journal answers a future question
+      worse the more of today is in it.)*
 - [ ] **Handing anything to another session: name the composition, not the
       assessment.** "SKILL.md and four norms registries were touched" is read
       and judged by the receiver; "a documentation commit" forces them either
