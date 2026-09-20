@@ -786,6 +786,105 @@ the only reason the third defect surfaced at all. An objection that turns
 out to be wrong still earns its keep, provided both sides then go and run
 something.
 
+### The loss can be in the selection rather than in the parse
+
+Same day, the completing case, found by `arbitrazh-ru` testing its own tools
+after the class was described to it as a question.
+
+`section_split.py` is clean, and deliberately: an unnumbered line is attached
+to the current section, the preamble goes under an empty key, and an
+ambiguous repeated number **raises rather than guesses**. Its docstring says
+so — «fail rather than drop text». Nothing is filtered away.
+
+The loss is one layer up. `journal_digest.py:46` carries
+`DEFAULT_SECTIONS = ("0", "14", "15", "17", "18", "19")`. A journal section
+outside that set does not appear in the digest, and nothing says so:
+
+```
+section 7 present in the journal, not in the set
+  -> absent from the digest, stderr empty, exit=0
+```
+
+And the asymmetry is against the tool's own stated philosophy. A **requested**
+section that is missing is announced loudly — line 350, «раздел N в записке
+не найден», and line 418, «Неполная выжимка, поданная как полная, — это то,
+ради чего эта проверка существует». A **present but unrequested** section is
+announced nowhere. The reader this tool exists for is the one who does not
+intend to open the journal; he is by construction the one person who cannot
+notice the omission himself.
+
+The header calls the digest a projection rather than a source, and that is
+formally true — but it is exactly the defence §10 does not accept. The word
+«проекция» does not say **what** is absent, and it sits on a carrier the
+reader passes long before he meets the consequence. So the fix is not "a
+better caveat" but **the first carrier**: list what was carried and name what
+was found and left out, in the output, beside the data. That reclassifies it
+from desirable to required.
+
+The selection set is also an assumption about someone else's document — the
+journal is kept by a person in their own `.docx`, and the shipped
+`case-journal.md` fixes no format. An assumption the tool neither checks nor
+displays.
+
+### A count without its counting method is not a complete claim
+
+Two sessions counted control terms in the same act, `nd=605504340`, both
+reading 412 979 characters, and got different numbers. This time the
+divergence was measured before either side explained it — one command:
+
+```
+              case-insensitive   case-sensitive   capitalised   diff
+формул               303              297              5+1       6
+пункт                741              734              7         7
+отличающ               4                4              0         0
+```
+
+One side had passed `re.I`, the other had not. Neither count was wrong and
+neither needed correcting; what was missing was the method printed beside the
+number.
+
+**The differential is the part worth keeping.** `отличающ` agreed exactly
+*because* it has no capitalised occurrences. Had the two sides been reading
+different text, all three controls would have diverged; that one of them
+agreed, and agreed precisely where the hypothesis predicts agreement, is what
+distinguishes "different instrument" from "different object". A divergence
+explained by a mechanism that also predicts where there will be **no**
+divergence has been tested; one that only explains the gap has not.
+
+(The last unit of the six needed its own command: `формул` has five `Формул`
+and one `ФОРМУЛ`. Five capitalised occurrences do not account for a gap of
+six, and stopping at "close enough" would have left a real third case
+unexamined.)
+
+### Being wrong in the direction that makes you look further
+
+`patent-ru`'s formulation, kept in its own words because the asymmetry is the
+whole content: when two sides explain a divergence, the two wrong answers are
+not equally cheap. «Детектор пропускает» sends someone to look; «у вас нет
+дефекта во входе» closes the question. Both were wrong here; only the first
+would have led anywhere. **When you must guess, guess the version that costs
+a command rather than the version that costs the inquiry.**
+
+### The zero is a property of the pattern before it is a property of the file
+
+Recorded against the coordinating session, the same afternoon, because the
+rule keeps being rediscovered from the outside and this time it was from the
+inside.
+
+Asked to confirm that `journal_digest.py` announces nothing about unrequested
+sections, I ran `grep -n "пропущен|не перенес|остальные разделы|not carried"`,
+got exactly one hit, and was about to record "no announcement exists". The hit
+was `if not carried_any:` — the pattern matching code, not a message. So the
+search had produced one false positive and no true negatives, and the honest
+statement of its result is **"my pattern found nothing, and it could not have:
+I was searching for wordings I do not know, in a file where they may not exist
+under those words."**
+
+The absence stands on the peer's run — `exit=0`, empty stderr, section
+missing — not on the grep. Which gives the attribution formula worth reusing:
+**the finding is theirs; I confirmed the structure around it, not the finding
+itself.**
+
 ## 9. Mechanical or judgmental — the class decides what a skill may assert
 
 *(From the `growth-research` lane of `arbitrazh-ru`, 2026-09-19. The
