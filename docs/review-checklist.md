@@ -301,6 +301,19 @@ plugin is listed at all.
 
 ## Testing status — track it, don't assume it
 
+- [ ] **A number about state is said together with the command that just
+      produced it, or it is not said.** *(The library session's own rule,
+      adopted 2026-09-20 after its "three of four are current" turned out to
+      be a stale paraphrase of a run it had not repeated that evening — the
+      tool was right, the sentence was old. It costs one command and saves
+      one investigation: the receiver spent a round building a mechanism to
+      explain the wrong number, and the mechanism was real but not the cause.
+      The general form, which is what makes this worth a checklist line:
+      **a paraphrase of a measurement ages separately from the
+      measurement.** The figure keeps being true of the moment it was taken;
+      the sentence goes on being repeated after that moment has passed, and
+      nothing in the sentence records when it was.)*
+
 - [ ] **A regression test whose fixture is not in the repository is a claim,
       not a test.** *(2026-09-20: `patent-ru/references/audit-compliance.md`
       §4 presented three numbers — "exactly 5 independent claims: 1, 16, 27,
