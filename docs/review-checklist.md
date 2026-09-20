@@ -166,6 +166,22 @@ hypothetical — see the note after each one.
       citations in four files. Also use `git grep`, not `grep -r`: the
       latter counted a `.pyc` as a ninth file, matching binary content that
       is not even tracked.)*
+      **Then read each hit and say whether it points inside this skill or
+      at a sibling** — only the first kind breaks when you move the file.
+      *(2026-09-20: the library's `--check-library` scan reports a dangling
+      reference for `arbitrazh-ru/SKILL.md:10`, which cites `legal-ru`,
+      `references/pre-litigation.md`. That file exists — in `legal-ru`. The
+      detector reads every path as relative to the skill it is scanning,
+      and `arbitrazh-ru` has no `references/pre-litigation.md` of its own:
+      `git ls-files references/ | grep -c pre-litigation` → `0`, which
+      reproduces the false positive without running the tool. The lock
+      records the truth — zero dangling references for all four family
+      skills. The surface grows with how well the family is cross-routed:
+      a `git grep -lE` for a sibling's name over `SKILL.md references/`
+      finds 9 shipped files, five of them in `arbitrazh-ru`. So do not
+      build a move gate on that scan. **A gate that errs toward alarm
+      trains you to ignore it as surely as a silent one, only more
+      slowly.**)*
 - [ ] **Shipped prose must not cite a private development journal.** If a
       `references/` file needs something from `PROJECT-MEMORY.md`, a
       dispatch history or a branch log, put the substance in the prose —
