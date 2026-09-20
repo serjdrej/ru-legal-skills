@@ -205,6 +205,37 @@ hypothetical — see the note after each one.
 
 ## After any **push** to a plugin repo — sync the marketplace
 
+- [ ] **One writer for the pin.** A skill session reports «запушил `<sha>`»;
+      the marketplace session verifies against `git ls-remote` and writes the
+      `ref` and the `description` in `.claude-plugin/marketplace.json`. Nobody
+      else commits to `ru-legal-skills`. *(2026-09-20: two conventions were
+      running at once — `patent-ru` had been told the marketplace session
+      would move its pin, while `legal-ru`, finishing its own review fixes,
+      moved its pin itself and committed into the marketplace session's
+      working directory, the same physical checkout. The content was correct
+      — pin equal to `ls-remote`, descriptions byte-identical at 975/975 —
+      and it was verified. It was safe only because that checkout happened to
+      have nothing uncommitted at that minute; fifteen minutes earlier it had
+      two unfinished sections of this convention in it. The session's own
+      words, kept because they are better than the rule: **it was empty by
+      accident, not by rule.** The reason for a single writer is not
+      ownership: the pin is the one point where the state of four
+      independent repositories is compressed into one claim, and from outside
+      "the pin moved" and "the pin moved twice" look the same.)*
+      **This does not extend to a skill's own repository.** Fixing your own
+      files, ordering work inside an authorised scope, and setting aside a
+      question of a different calibre are the lane's own judgment. A rule
+      requiring confirmation for every edit would buy nothing and would
+      teach asking permission where judgment is wanted — see the standing
+      caution about forbidding something without naming what goes in its
+      place. What is asked instead is one line **before**, not after:
+      "taking these items, starting", so the coordinating session does not
+      report as pending what is already done.
+      *(Corollary, same day: `gost-ed-mashiny` keeps a **third** copy of its
+      description in `.claude-plugin/plugin.json`, byte-identical to the
+      other two at 522 chars. Three copies, and until now no sync step for
+      the third anywhere in this checklist.)*
+
 *(Trigger corrected 2026-09-19. This section said "after any commit" for
 nine days and that is the wrong event: a pin is stale relative to what is
 **published**, not to what exists in somebody's working copy. `patent-ru`
@@ -269,6 +300,21 @@ listed in `marketplace.json`** — don't infer visibility from the fact that a
 plugin is listed at all.
 
 ## Testing status — track it, don't assume it
+
+- [ ] **A regression test whose fixture is not in the repository is a claim,
+      not a test.** *(2026-09-20: `patent-ru/references/audit-compliance.md`
+      §4 presented three numbers — "exactly 5 independent claims: 1, 16, 27,
+      32, 37" among them — as the skill's own regression test. They were
+      measured on the live claim set of the author's real case, which is
+      deliberately not in the repository. So the thing the file called a
+      regression test **could not be run by any maintainer, including its
+      author**, for as long as it stood there. The repair was to rebuild the
+      fixture by its declared *shape* rather than its text — 41 claims, 5
+      independent at those numbers — which made the documented figures
+      checkable by anyone. Note the order that makes the result trustworthy:
+      the fixture was built to the declared shape **before** the code was
+      touched, and gave 35 on the old code. A baseline constructed after the
+      fix proves only that the fix is self-consistent.)*
 
 - [ ] `legal-ru`: full RED→GREEN→REFACTOR pressure-tested (4 branches, one
       scenario per highest-risk item, Sonnet 5 subagents) — done
