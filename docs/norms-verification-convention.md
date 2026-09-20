@@ -931,7 +931,15 @@ I was searching for wordings I do not know, in a file where they may not exist
 under those words."**
 
 The absence stands on the peer's run — `exit=0`, empty stderr, section
-missing — not on the grep. Which gives the attribution formula worth reusing:
+missing — not on the grep. Which gives the one-sentence form the library
+session arrived at from its own side the same day, and which is the sharpest
+we have: **a negative claim is the cheapest thing to say and the most
+expensive thing to check.** Three were made across this family in a week and
+two of them were wrong; a fourth was made this afternoon by this session and
+was also wrong. The rate is not an accident of carelessness — it follows from
+the asymmetry, because saying "there is none" costs one sentence while
+establishing it costs an instrument you must first prove can see the thing
+when it is there. Which gives the attribution formula worth reusing:
 **the finding is theirs; I confirmed the structure around it, not the finding
 itself.**
 
