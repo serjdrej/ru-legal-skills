@@ -339,6 +339,15 @@ plugin is listed at all.
       the sentence goes on being repeated after that moment has passed, and
       nothing in the sentence records when it was.)*
 
+- [ ] **A closed vocabulary holds because the seventh value fails a
+      mechanical check, not because the reader knows the six.** *(2026-09-20,
+      `arbitrazh-ru`, found by a full run rather than by review: a test stood
+      on one registry entry being "without a weak marker", and it was without
+      one only because the invented tier it carried was not in the linter's
+      set. An invented status is therefore not a vocabulary problem — it is a
+      status that escaped the check, and a passing test was quietly resting
+      on the escape. The session set out to fix wording and was in fact
+      fixing the linter's reach.)*
 - [ ] **When your own change breaks your own test, re-run the repaired test
       against the pre-fix commit.** A repair that also stops catching the
       original defect looks exactly like a correct repair: both end in a

@@ -53,7 +53,21 @@ them from scratch:
 | Paraphrase, unverified | *"парафраз; drafted from training data on \<date\>, not yet verified against a live source — re-check before reliance"* | `legal-ru/references/norms-registry-statutes.md`, entries R-98-3, R-98-5, R-98-TK14, R-GK-431, R-GK-401-406 |
 | Paraphrase, unverified (equivalent, plugin's own words) | *"содержание — парафраз из рабочих материалов skill, составлено \<date\>; не сверено с действующим текстом стандарта. Не использовать как цитату и перепроверить перед выпуском документа."* | `gost-ed-mashiny/references/norms-registry.md`, all three entries (ГОСТ Р 2.610-2019, ГОСТ Р 2.601-2019, ТР ТС 010/2011) |
 | **PROCEDURAL DETAIL — extra caution** (most preclusive/fast-moving details) | *"Статус: PROCEDURAL DETAIL — extra caution. Paraphrase only, drafted from training data on 2026-09-10, not verified against a live source. Exact deadline, application form and filing route must be re-checked before any filing."* | `legal-ru/references/norms-registry-corporate.md`, entry R-CORP-EGRUL-129-5-17 (ЕГРЮЛ filing deadline/form) |
-| ✅ Verified verbatim (double-sourced) | *"✅ сверено дословно по полному тексту акта"*, with the strongest variant *"Двойное подтверждение — самый надёжный статус в этом реестре"* | `patent-ru/references/norms-registry.md` §2 header and every row of its table |
+| ✅ Verified verbatim | *"✅ сверено дословно по полному тексту акта"* | `patent-ru/references/norms-registry.md`, every row of its table; `arbitrazh-ru/references/norms-registry-arbitrazh-procedure.md`, all 11 |
+| ✅ Verified verbatim, **double-sourced** — a separate claim, stated separately | *"Двойное подтверждение — самый надёжный статус в этом реестре"*, in the registry's own header, **beside** the row marker rather than inside it | `patent-ru/references/norms-registry.md` §2 header |
+
+**The tier name above was wrong until 2026-09-20, and the correction is
+worth keeping because of how it failed.** It read "✅ Verified verbatim
+(double-sourced)" as one tier, which glued a property of one registry —
+`patent-ru` happens to confirm through two sources and says so in its §2
+header — onto the marker itself. `arbitrazh-ru` uses the same marker with
+one source and states «Источник один — ИПС „Законодательство России“;
+„двойное подтверждение“ не заявляется» at `norms-registry-arbitrazh-procedure.md:53`.
+Under the old name its eleven entries read as a vocabulary violation; they
+were not. The review that found them was reading this table, so the defect
+was in this document and it manufactured a finding in another repository.
+**A tier names what the marker asserts, never what the registry that
+introduced it happens to also do.**
 
 `legal-ru`'s SKILL.md names the PROCEDURAL DETAIL tier explicitly as a
 category, not a one-off: it lists the breach-notification timetable
