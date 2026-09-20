@@ -604,6 +604,56 @@ accepted its own claim that something needed avoiding; here one nearly
 accepted someone else's that nothing needed checking. Both were claims
 about whether to look, which is why neither looked like a claim at all.
 
+**Name the composition, not the assessment — and the worst version is an
+assessment that contradicts a measurement you already made.** 2026-09-20,
+the coordinating session's, caught by the library session the same hour the
+rule above was being written into this file.
+
+Telling the library that `legal-ru`'s import was behind, I added that it was
+«один документационный коммит» and that I was not asking for a resync, since
+the owner had a queue of blocking items. The library session looked anyway,
+and said why: an estimate of whether something is worth looking at arrives
+attached to the thing itself, so accepting it *is* not looking. What
+`d9ccda7` actually contains:
+
+```
+ NOTICE.md                                  |  9 +++--
+ README.md                                  | 32 ++++++++++------
+ SKILL.md                                   | 37 +++++++++++-------
+ references/norms-registry-corporate.md     |  4 +-
+ references/norms-registry-personal-data.md |  2 +-
+ references/norms-registry-procedure.md     | 12 +++---
+ references/norms-registry-statutes.md      | 61 +++++++++++++++++++++---------
+ 7 files changed, 104 insertions(+), 53 deletions(-)
+```
+
+Four norms registries, and in the statutes one a placeholder entry — which
+had honestly warned "do not rely on content that is not here" — replaced by
+a real one, plus the correction that the article text comes from
+`ips_lookup.py` and not from `pravo_lookup.py`. That is what an agent leans
+on in legal work, not documentation.
+
+The aggravating detail is mine and worth stating plainly: **I had already
+measured it.** An hour earlier I had verified that `ips_lookup`'s reach in
+that repository went from 2 shipped files to 7, and had read the new
+`## Скрипты` row myself. Then I described the same commit to a third party
+with a word that means "nothing here needs your attention". An assessment
+made without measuring is a guess; an assessment that contradicts a
+measurement already in hand is worse, because the measurement was available
+to the person choosing the word.
+
+The fix is not more scepticism between sessions — that would turn every
+hand-off into a re-audit. It is the library session's, and it costs nothing:
+
+> **Name the composition, not the assessment.** "SKILL.md and four norms
+> registries were touched" is read and judged by the receiver. "A
+> documentation commit" forces them either to trust it or to check anyway,
+> and the first is cheaper for both only when it is true.
+
+A composition is a fact the sender already has and the receiver can act on.
+An importance rating is the receiver's job, performed by the sender, out of
+their context, and it is the half that decides whether anyone looks.
+
 **An assessment of an obstacle is checked the same way as a claim about
 state — with a command. "Let us wait, just in case" is a claim about the
 world, not a neutral position.** `arbitrazh-ru`'s, 2026-09-19, and its own
