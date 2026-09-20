@@ -339,6 +339,20 @@ plugin is listed at all.
       the sentence goes on being repeated after that moment has passed, and
       nothing in the sentence records when it was.)*
 
+- [ ] **When your own change breaks your own test, re-run the repaired test
+      against the pre-fix commit.** A repair that also stops catching the
+      original defect looks exactly like a correct repair: both end in a
+      green suite. Only the old commit tells them apart. *(2026-09-20,
+      `arbitrazh-ru`: two rows added to the routing table turned its
+      capability test red — "действует ли он" from a new row about checking
+      a Пленум was being read as a claim about `by-title` eighteen lines
+      above. The session narrowed the granularity and then re-ran the test
+      against `ffaee0a` to confirm it still failed there. Verified
+      independently by extracting that commit to a scratch tree with `git
+      archive`, dropping the new test into it, and running both: `FAILED
+      (failures=2)` on the old tree, `OK` on the live one. Blunting a test
+      is the cheapest way to make a suite green, and it is invisible in the
+      suite.)*
 - [ ] **A regression test whose fixture is not in the repository is a claim,
       not a test.** *(2026-09-20: `patent-ru/references/audit-compliance.md`
       §4 presented three numbers — "exactly 5 independent claims: 1, 16, 27,
