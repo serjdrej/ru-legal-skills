@@ -654,6 +654,25 @@ A composition is a fact the sender already has and the receiver can act on.
 An importance rating is the receiver's job, performed by the sender, out of
 their context, and it is the half that decides whether anyone looks.
 
+**It paid for itself on the first use, and the payment says what a stale copy
+actually costs.** Hours later the same hand-off was made the other way, as
+twelve lines of composition with no rating attached. The library session read
+them and resynced on the strength of one line: `patent-ru`'s frontmatter had
+changed from «never load together» to «load separately, except at three
+documented junctions». Until that moment the library was serving agents a
+**prohibition the upstream had already retracted** — and a loading rule is
+not text, it is what an agent decides by. Under the old habit the sentence
+would have been "five commits, mostly tests and text", which is true, and the
+resync would have waited.
+
+So the cost of an import that lags is not "older content". It is that a claim
+the author has withdrawn goes on being served as current, by a copy that has
+no way to know it was withdrawn. That is §10 seen from the distribution side:
+there, a caveat must name the condition under which it is deleted; here, the
+deletion happened upstream and the copy kept the un-deleted version. Verified
+after the resync: `grep` over the imported `SKILL.md` finds the new wording
+once and the retracted one not at all.
+
 **An assessment of an obstacle is checked the same way as a claim about
 state — with a command. "Let us wait, just in case" is a claim about the
 world, not a neutral position.** `arbitrazh-ru`'s, 2026-09-19, and its own
