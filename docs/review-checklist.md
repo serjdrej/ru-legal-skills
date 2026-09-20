@@ -301,6 +301,19 @@ plugin is listed at all.
 
 ## Testing status — track it, don't assume it
 
+- [ ] **Handing anything to another session: name the composition, not the
+      assessment.** "SKILL.md and four norms registries were touched" is read
+      and judged by the receiver; "a documentation commit" forces them either
+      to trust it or to check anyway. Importance is the receiver's job,
+      performed out of their context. *(Case and the payoff on first use: see
+      the convention, "Name the composition, not the assessment".)*
+- [ ] **A neighbour's number looks wrong: ask what they ran and when, before
+      diagnosing their tool.** A figure can be stale with nothing broken, and
+      a paraphrase of a figure can be wrong while both figure and tool are
+      right. Advice about their instrument may still be worth giving — as a
+      suggestion to check, never as the diagnosis; the two fit in one
+      sentence, so separating them has to be deliberate. *(Case: see the
+      convention, "Building a cause under someone else's error".)*
 - [ ] **A number about state is said together with the command that just
       produced it, or it is not said.** *(The library session's own rule,
       adopted 2026-09-20 after its "three of four are current" turned out to
