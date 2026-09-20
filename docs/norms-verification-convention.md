@@ -699,6 +699,93 @@ have in that shape. "Nothing to apply it to" is not evidence either way, and
 reporting it as a pass would have been the false positive this whole section
 exists to prevent.
 
+### A parser that emits is a different animal from a parser that judges
+
+Measured 2026-09-20 across two skills, after a review found the first case
+and the second skill tested itself for the same class.
+
+`patent-ru`'s `claims_integrity.py` reads a claim set line by line, keeps
+only the lines its `CLAIM_RE` matched, and discards the rest. Continuation
+lines — the ordinary shape of any real claim in a Markdown file — are gone
+before anything else happens. Two consequences, and only the second is
+frightening:
+
+```
+same text, claims on one line   ->  ✗ п.1: ссылка вперёд, на п.3   exit=1
+same text, wrapped across lines ->  ✓ ссылочная целостность в порядке  exit=0
+```
+
+```
+renum --drop 2 --emit, wrapped input:
+  1. Устройство для измерения, содержащее корпус, приёмник и
+  Проверка результата: ✓ ссылочная целостность в порядке   exit=0
+```
+
+The whole characterizing part of an independent claim is gone, the claim
+ends on a conjunction, and the tool certifies it. `draft-divisional.md`
+documents that exact command as the way to assemble the claim set of a
+divisional application — text that goes to ФИПС.
+
+**The rule this gives.** A filtering parser that only *judges* loses a
+check when it drops a line, and the loss is visible in the verdict. A
+filtering parser that *emits its parse as the result* loses the **text**,
+and nothing in the output says so: what comes out is a plausible document.
+So the question to ask of any script is not "does it split on lines" but
+**"does it print what it parsed, or a verdict about it"**. Only the first
+kind can hand you a truncated deliverable with a green tick.
+
+**Direction of failure is part of the class.** `arbitrazh-ru` tested
+`proof_list_lint.py` for the same shape with a planted violation and five
+line-breakings of one list. It does not reproduce, and the reason is worth
+as much as the result: a wrapped table row breaks the row's arity, so the
+structural checks fire. Failure there is **green→red**, never red→green;
+`exit` never went from 1 to 0. A parser that breaks loudly is not the same
+defect as one that breaks quietly, and putting both in one class was the
+coordinating session's imprecision, corrected by the measurement.
+
+**A third outcome exists, between caught and missed: the right verdict for
+the wrong reason.** In that same experiment, when the offending line itself
+was wrapped, the two checks that had caught the substantive violation
+stopped firing and two structural checks took their place. The list stays
+red and nothing escapes — but the tool names a different fault, and whoever
+fixes "the structure" meets the real error one run later. It self-corrects,
+at the cost of one round spent reading a wrong report. Worth its own name,
+because it differs from "missed" by its outcome and from "caught" by where
+it sends the reader.
+
+### A recogniser's vocabulary is part of its answer
+
+Two sessions ran the same check on the same tool and got different counts —
+one problem against two. Each explained the divergence rather than
+measuring it: one said the other's fixture had no defect in it, the other
+said the detector had missed one. **Both explanations were wrong.** The
+cause was a third defect neither had looked for:
+
+```
+refs_of('… приёмник размещён согласно п.4.')  ->  [1]      # the 4 is invisible
+
+по п.4                 -> [1, 4]
+согласно п.4           -> [1]
+в соответствии с п.4   -> [1]
+указанному в п.4       -> [1]
+по пункту 4            -> [1]
+```
+
+`REF_RE` requires the literal preposition «по» immediately before «п.».
+Four of five ordinary wordings — including the same reference with the word
+spelled out — produce no reference at all, so a dangling reference written
+any of those ways is not merely missed, it does not exist as far as the tool
+is concerned. Both runs were correct for their own input; the inputs differed
+in one word.
+
+**So: a divergence between two counts is measured, never explained.** An
+explanation that fits is not evidence, and two plausible explanations that
+contradict each other are a signal that neither has been tested. Here the
+disagreement was worth more than either agreement would have been — it is
+the only reason the third defect surfaced at all. An objection that turns
+out to be wrong still earns its keep, provided both sides then go and run
+something.
+
 ## 9. Mechanical or judgmental — the class decides what a skill may assert
 
 *(From the `growth-research` lane of `arbitrazh-ru`, 2026-09-19. The
