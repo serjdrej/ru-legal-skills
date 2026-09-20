@@ -962,6 +962,58 @@ when it is there. Which gives the attribution formula worth reusing:
 **the finding is theirs; I confirmed the structure around it, not the finding
 itself.**
 
+### A neighbour's local `master` is not what is published
+
+The trap is mine, found in my own command and worth stating before the
+mistake I then made with it.
+
+Checking whether the library's imports were current, I compared each
+`ATTRIBUTION.md` revision against `git rev-parse HEAD` of the corresponding
+checkout. `patent-ru` came back stale. It was not:
+
+```
+patent-ru  imported d70c07c4  published d70c07c4  local-master c913774b
+```
+
+That session works in a git worktree and deliberately leaves the main
+checkout's `master` where it was; the branch goes straight to `origin`. An
+import mirrors **what is published**, so the authority is `git ls-remote`,
+never a local head. And the failure mode has a nasty gradient: the more
+carefully a neighbour keeps their main checkout untouched, the more often an
+instrument that reads local heads will call their work missing.
+
+### Building a cause under someone else's error
+
+Same hour, and the part worth more than the trap.
+
+Having found that mechanism in my own command, I was told by the library
+session that "three of four are current". I reproduced the wrong answer with
+my instrument, found the worktree explanation, and offered it as the
+explanation of **their** statement — suggesting they check what their own
+tool reads.
+
+Their tool reads `ls-remote` (`check_upstream.py:51`) and never touches a
+local clone. It had been right all along. The real cause was that their
+sentence was a stale paraphrase of a run they had not repeated that evening.
+The symptom matched exactly; the mechanism did not.
+
+This is the sixth built cause this family has caught in a week and the first
+built **under someone else's observation** rather than one's own. The earlier
+five were all the same shape — a plausible mechanism accepted because it fit
+what was seen — but they were at least explanations of the explainer's own
+measurement. Reaching across to explain a neighbour's number is worse in one
+specific way: **you cannot see their instrument, and the thing most likely to
+be wrong is not the instrument at all but the sentence.** Mine was a real
+mechanism in a real command; it simply was not theirs.
+
+The practical form: when a neighbour's number looks wrong, the cheapest
+question is not "what is broken in your tool" but **"what did you run, and
+when"**. A figure can be stale without anything being broken, and a
+paraphrase of a figure can be wrong while both the figure and the tool are
+right. Advice about their instrument is worth giving — mine was sound on its
+own — but it must go out as a suggestion to check, not as the diagnosis, and
+the two are easy to write in the same sentence.
+
 ## 9. Mechanical or judgmental — the class decides what a skill may assert
 
 *(From the `growth-research` lane of `arbitrazh-ru`, 2026-09-19. The
