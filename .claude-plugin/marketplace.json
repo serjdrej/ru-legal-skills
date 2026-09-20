@@ -54,7 +54,7 @@
     },
     {
       "name": "patent-ru",
-      "description": "Russian patent prosecution and prior-art search skill — combines Rospatent (ИС ПП) database search, including the Soviet/Russian fund via the official search-platform API, with drafting and editing of application documents under FIPS requirements (order of the Russian Ministry of Economic Development No. 107, 21.02.2023). Use when the user mentions патентный поиск, поиск аналогов, база Роспатента, формула изобретения, заявка на изобретение, уведомление ФИПС, нарушение единства изобретения, выделенная заявка, ответ на запрос экспертизы, реферат, прототип, новая материя, п.2 ст.1378 ГК РФ, or asks to draft, review, or audit a Russian invention application. Two branches — search and drafting — never load together; GOST/ЕСКД drawing standards are out of scope.",
+      "description": "Russian patent prosecution and prior-art search skill — combines Rospatent (ИС ПП) database search, including the Soviet/Russian fund via the official search-platform API, with drafting and editing of application documents under FIPS requirements (order of the Russian Ministry of Economic Development No. 107, 21.02.2023). Use when the user mentions патентный поиск, поиск аналогов, база Роспатента, формула изобретения, заявка на изобретение, уведомление ФИПС, нарушение единства изобретения, выделенная заявка, ответ на запрос экспертизы, реферат, прототип, новая материя, п.2 ст.1378 ГК РФ, or asks to draft, review, or audit a Russian invention application. Two branches — search and drafting — load separately, except at three documented junctions; GOST/ЕСКД drawing standards are out of scope.",
       "author": {
         "name": "Сергей Дрейзин",
         "email": "sergejdrejzin@gmail.com"
@@ -63,7 +63,7 @@
       "source": {
         "source": "url",
         "url": "https://github.com/serjdrej/patent-ru.git",
-        "ref": "c913774b8f9b6f095655acbe1e81bbebac7c2b68"
+        "ref": "d70c07c4d7a617d6f7695b525bbecb9c57cda23b"
       },
       "homepage": "https://github.com/serjdrej/patent-ru"
     }
